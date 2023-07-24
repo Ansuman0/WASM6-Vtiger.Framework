@@ -5,7 +5,7 @@ import org.testng.ITestResult;
 
 /**
  * This class will provide implementation for the IRetryAnalyser
- * @author Swabhiman
+ * @author Ansuman
  *
  */
 public class RetryAnalyserImplementation implements IRetryAnalyzer{
