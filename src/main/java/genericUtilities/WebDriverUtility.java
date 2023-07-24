@@ -19,7 +19,7 @@ import com.google.common.io.Files;
 
 /**
  * This class consists of generic methods related to all web driver actions
- * @author Swabhiman
+ * @author Ansuman
  *
  */
 public class WebDriverUtility {
