@@ -21,7 +21,7 @@ import objectRepository.LoginPage;
 
 /**
  * This class consists of all basic configuration annotations of TestNG
- * @author Swabhiman
+ * @author Ansuman
  *
  */
 public class BaseClass {

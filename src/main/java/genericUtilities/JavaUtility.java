@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  * This class consists of generic methods related to java
- * @author Swabhiman
+ * @author Ansuman
  *
  */
 public class JavaUtility {
