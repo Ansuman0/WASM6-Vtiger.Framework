@@ -7,7 +7,7 @@ import java.util.Properties;
 
 /**
  * This class consists of generic methods related to property file
- * @author Swabhiman
+ * @author Ansuman
  *
  */
 public class PropertyFileUtility {
