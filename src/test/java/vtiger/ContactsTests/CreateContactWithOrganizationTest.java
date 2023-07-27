@@ -1,7 +1,5 @@
 package vtiger.ContactsTests;
 
-import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,7 +18,7 @@ import objectRepository.OrganizationsPage;
 public class CreateContactWithOrganizationTest extends BaseClass {
 
     @Test(groups = "RegressionSuite")
-    public void createContactWithOrgTest() throws IOException
+    public void createContactWithOrgTest() throws Exception
 	{
 
 		String ORGNAME = eUtil.readDataFromExcel("Contact", 4, 3) + jUtil.getRandomNumber();
