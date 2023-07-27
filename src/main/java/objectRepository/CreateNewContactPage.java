@@ -54,7 +54,7 @@ public class CreateNewContactPage extends WebDriverUtility{
 	
 	//Business library
 	/**
-	 * This method will create a new Contact
+	 * This method will create a new Contact.
 	 * @param LASTNAME
 	 */
 	public void createNewContact(String LASTNAME)
@@ -78,6 +78,15 @@ public class CreateNewContactPage extends WebDriverUtility{
 		OrgSearchBtn.click();
 		driver.findElement(By.xpath("//a[.='"+ORGNAME+"']")).click();
 		switchToWindow(driver, "Contacts");
+		SaveBtn.click();
+	}
+	/**
+	 * This method will create a new contact. 
+	 * @param driver
+	 * @param LASTNAME
+	 */
+	public void createNewContact(WebDriver driver,String LASTNAME) {
+		LastNameEdt.sendKeys(LASTNAME);
 		SaveBtn.click();
 	}
 }
