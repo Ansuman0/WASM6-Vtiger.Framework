@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.github.dockerjava.api.model.Driver;
+
 import genericUtilities.WebDriverUtility;
 
 public class HomePage extends WebDriverUtility{
@@ -62,19 +64,23 @@ public class HomePage extends WebDriverUtility{
 	
 	/**
 	 * This method will click on Contacts link
+	 * @throws Exception 
 	 */
-	public void clickOnContactsLink()
+	public void clickOnContactsLink() throws Exception
 	{
+		Thread.sleep(2000);
 		ContactsLnk.click();
 	}
 	
 	/**
 	 * This method will logout of the application
 	 * @param driver
+	 * @throws Exception 
 	 */
-	public void logOutOfApp(WebDriver driver)
+	public void logOutOfApp(WebDriver driver) 
 	{
 		mouseHoverAction(driver, AdministratorImg);
+		waitForElementToBeVisisble(driver, SignOutLnk);
 		SignOutLnk.click();
 	}
 	
