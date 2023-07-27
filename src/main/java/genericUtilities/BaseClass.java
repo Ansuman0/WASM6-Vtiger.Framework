@@ -85,7 +85,7 @@ public class BaseClass {
 	}
 	
 	@AfterMethod(groups = {"SmokeSuite","RegressionSuite"})
-	public void amConfig()
+	public void amConfig() throws Exception
 	{
 		HomePage hp = new HomePage(driver);
 		hp.logOutOfApp(driver);
