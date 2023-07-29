@@ -70,7 +70,10 @@
     <scope>provided</scope>
 </dependency>
 	
-	
+	 < dependency > 
+		 < groupId >com.contrastsecurity</ groupId > 
+< artifactId >java-sarif</ artifactId > < version >2.0</ version >
+	 </ dependency >
 
   </dependencies>
  
