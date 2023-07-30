@@ -9,7 +9,7 @@
     </classes>
   </test> <!-- Test -->
   
-    <test thread-count="2" parallel="tests" name="Test">
+    <test thread-count="2" parallel="tests" name="Test1">
     <classes>
       <class name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"/>
     </classes>
