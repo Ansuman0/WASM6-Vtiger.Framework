@@ -1,9 +1,13 @@
 package vtiger.ContactsTests;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
+import genericUtilities.ListenersImplementation;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import objectRepository.ContactsInfoPage;
 import objectRepository.ContactsPage;
 import objectRepository.CreateNewContactPage;
@@ -16,14 +20,21 @@ import objectRepository.HomePage;
  *
  */
 
-public class CreateContact extends BaseClass {
 
+@Epic("Web Application SmokeSuite Testing")
+@Feature("Login Page Tests")
+@Listeners(ListenersImplementation.class)
+public class CreateContact extends BaseClass {
+	
+	
+	
 	@Test(groups = "SmokeSuite")
 	public void createContactTest() throws Exception {
 		
 
 		// Step 3: read all the required data
-		String LASTNAME = eUtil.readDataFromExcel("Contact", 1, 2) + jUtil.getRandomNumber();
+		String LASTNAME = jUtil.generateRandomFirstName() +" "+ jUtil.generateRandomLastName();
+		
 
 		// Step 4: Navigate to Contacts Link
 		HomePage hp = new HomePage(driver);
@@ -37,12 +48,14 @@ public class CreateContact extends BaseClass {
 		// Step 6: create contact with mandatory details and save
 		CreateNewContactPage ccp = new CreateNewContactPage(driver);
 		ccp.createNewContact(LASTNAME);
+		System.out.println("Name : "+LASTNAME);
 
 		// Step 7: Validate
 		ContactsInfoPage cip = new ContactsInfoPage(driver);
 		String contactHeader = cip.getContactHeader();
 		System.out.println(contactHeader);
 		Assert.assertTrue(contactHeader.contains(LASTNAME));
+		wUtil.takeScreenShot(driver, contactHeader);
 
 	}
 }

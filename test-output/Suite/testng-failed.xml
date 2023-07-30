@@ -22,6 +22,17 @@
           <include name="asConfig"/>
         </methods>
       </class> <!-- vtiger.OrganizationsTests.CreateOrgWithIndustryTest -->
+      <class name="vtiger.ContactsTests.CreateContact">
+        <methods>
+          <include name="amConfig"/>
+          <include name="bmConfig"/>
+          <include name="bcConfig"/>
+          <include name="acConfig"/>
+          <include name="bsConfig"/>
+          <include name="createContactTest"/>
+          <include name="asConfig"/>
+        </methods>
+      </class> <!-- vtiger.ContactsTests.CreateContact -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
