@@ -22,7 +22,7 @@ import objectRepository.HomePage;
 
 
 @Epic("Web Application SmokeSuite Testing")
-@Feature("Login Page Tests")
+@Feature("Contat Page TestCases")
 @Listeners(ListenersImplementation.class)
 public class CreateContact extends BaseClass {
 	
@@ -55,7 +55,8 @@ public class CreateContact extends BaseClass {
 		String contactHeader = cip.getContactHeader();
 		System.out.println(contactHeader);
 		Assert.assertTrue(contactHeader.contains(LASTNAME));
-		wUtil.takeScreenShot(driver, contactHeader);
+		System.out.println("Contact Header Matched : "+LASTNAME);
+		//wUtil.takeScreenShot(driver, contactHeader);
 
 	}
 }
