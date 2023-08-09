@@ -2,43 +2,40 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-31T00:12:37 IST" name="Default suite" finished-at="2023-07-31T00:12:57 IST" duration-ms="19477">
+  <suite started-at="2023-08-09T20:40:38 IST" name="Default suite" finished-at="2023-08-09T20:40:59 IST" duration-ms="20390">
     <groups>
-      <group name="SmokeSuite">
-        <method signature="CreateContact.createContactTest()[pri:0, instance:vtiger.ContactsTests.CreateContact@29d80d2b]" name="createContactTest" class="vtiger.ContactsTests.CreateContact"/>
-      </group> <!-- SmokeSuite -->
     </groups>
-    <test started-at="2023-07-31T00:12:37 IST" name="Default test" finished-at="2023-07-31T00:12:57 IST" duration-ms="19477">
-      <class name="vtiger.ContactsTests.CreateContact">
-        <test-method is-config="true" signature="bsConfig()[pri:0, instance:vtiger.ContactsTests.CreateContact@29d80d2b]" started-at="2023-07-31T00:12:37 IST" name="bsConfig" finished-at="2023-07-31T00:12:37 IST" duration-ms="12" status="PASS">
+    <test started-at="2023-08-09T20:40:38 IST" name="Default test" finished-at="2023-08-09T20:40:59 IST" duration-ms="20390">
+      <class name="vtiger.LeadsTests.CreateLead">
+        <test-method is-config="true" signature="bsConfig()[pri:0, instance:vtiger.LeadsTests.CreateLead@29d80d2b]" started-at="2023-08-09T20:40:38 IST" name="bsConfig" finished-at="2023-08-09T20:40:38 IST" duration-ms="12" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bsConfig -->
-        <test-method is-config="true" signature="bcConfig()[pri:0, instance:vtiger.ContactsTests.CreateContact@29d80d2b]" started-at="2023-07-31T00:12:37 IST" name="bcConfig" finished-at="2023-07-31T00:12:41 IST" duration-ms="4147" status="PASS">
+        <test-method is-config="true" signature="bcConfig()[pri:0, instance:vtiger.LeadsTests.CreateLead@29d80d2b]" started-at="2023-08-09T20:40:39 IST" name="bcConfig" finished-at="2023-08-09T20:40:45 IST" duration-ms="6709" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bcConfig -->
-        <test-method is-config="true" signature="bmConfig()[pri:0, instance:vtiger.ContactsTests.CreateContact@29d80d2b]" started-at="2023-07-31T00:12:41 IST" name="bmConfig" finished-at="2023-07-31T00:12:44 IST" duration-ms="2841" status="PASS">
+        <test-method is-config="true" signature="bmConfig()[pri:0, instance:vtiger.LeadsTests.CreateLead@29d80d2b]" started-at="2023-08-09T20:40:45 IST" name="bmConfig" finished-at="2023-08-09T20:40:48 IST" duration-ms="2853" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bmConfig -->
-        <test-method signature="createContactTest()[pri:0, instance:vtiger.ContactsTests.CreateContact@29d80d2b]" started-at="2023-07-31T00:12:44 IST" name="createContactTest" finished-at="2023-07-31T00:12:55 IST" duration-ms="10142" status="PASS">
+        <test-method signature="createContactTest()[pri:0, instance:vtiger.LeadsTests.CreateLead@29d80d2b]" started-at="2023-08-09T20:40:48 IST" name="createContactTest" finished-at="2023-08-09T20:40:57 IST" duration-ms="8302" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createContactTest -->
-        <test-method is-config="true" signature="amConfig()[pri:0, instance:vtiger.ContactsTests.CreateContact@29d80d2b]" started-at="2023-07-31T00:12:55 IST" name="amConfig" finished-at="2023-07-31T00:12:56 IST" duration-ms="1838" status="PASS">
+        <test-method is-config="true" signature="amConfig()[pri:0, instance:vtiger.LeadsTests.CreateLead@29d80d2b]" started-at="2023-08-09T20:40:57 IST" name="amConfig" finished-at="2023-08-09T20:40:59 IST" duration-ms="1693" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- amConfig -->
-        <test-method is-config="true" signature="acConfig()[pri:0, instance:vtiger.ContactsTests.CreateContact@29d80d2b]" started-at="2023-07-31T00:12:56 IST" name="acConfig" finished-at="2023-07-31T00:12:57 IST" duration-ms="200" status="PASS">
+        <test-method is-config="true" signature="acConfig()[pri:0, instance:vtiger.LeadsTests.CreateLead@29d80d2b]" started-at="2023-08-09T20:40:59 IST" name="acConfig" finished-at="2023-08-09T20:40:59 IST" duration-ms="233" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- acConfig -->
-        <test-method is-config="true" signature="asConfig()[pri:0, instance:vtiger.ContactsTests.CreateContact@29d80d2b]" started-at="2023-07-31T00:12:57 IST" name="asConfig" finished-at="2023-07-31T00:12:57 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="asConfig()[pri:0, instance:vtiger.LeadsTests.CreateLead@29d80d2b]" started-at="2023-08-09T20:40:59 IST" name="asConfig" finished-at="2023-08-09T20:40:59 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- asConfig -->
-      </class> <!-- vtiger.ContactsTests.CreateContact -->
+      </class> <!-- vtiger.LeadsTests.CreateLead -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
