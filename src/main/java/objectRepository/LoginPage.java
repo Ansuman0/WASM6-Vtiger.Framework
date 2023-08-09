@@ -1,10 +1,12 @@
 package objectRepository;
 
+import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -33,6 +35,9 @@ public class LoginPage { // rule 1: create class
 
 	@FindAll({ @FindBy(id = "submitButton"), @FindBy(xpath = "//input[@type='submit']") })
 	private WebElement loginBtn;
+	
+	@FindBy(xpath = "//span[@class='userName']")
+	private WebElement loginUserName;
 
 	// Rule 3: Create a constructor to initiliaze
 	public LoginPage(WebDriver driver) 
@@ -52,6 +57,10 @@ public class LoginPage { // rule 1: create class
 	public WebElement getLoginBtn() {
 		return loginBtn;
 	}
+	
+	public WebElement loginUserName() {
+		return loginUserName;
+	}
 
 	//Business Libraries - project specific generic utilities
 	/**
@@ -68,6 +77,16 @@ public class LoginPage { // rule 1: create class
     	userNameEdt.sendKeys(USERNAME);
     	passwordEdt.sendKeys(PASSWORD);
     	loginBtn.click();
+    	
+    	String userName = loginUserName.getText();
+    	String actualName="Administrator";
+    	Assert.assertTrue(userName.contains(actualName));
+    	System.out.println("User login as Admin: "+userName);
+    	
+//		if (userName .equalsIgnoreCase(actualName)) {
+//    		
+//    		
+//    	}
     }
 	
 	

@@ -1,10 +1,6 @@
 package genericUtilities;
 
 import java.io.IOException;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -14,8 +10,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-
-import io.qameta.allure.Attachment;
 
 /**
  * This class provides implementation to ITestListener Interface
@@ -29,7 +23,6 @@ public class ListenersImplementation implements ITestListener {
 	ExtentTest test;
 
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
 
 		String methodName = result.getMethod().getMethodName();
 		System.out.println(methodName + " ---- Test Execution Started ----"); // Overriding //abstraction
@@ -40,18 +33,28 @@ public class ListenersImplementation implements ITestListener {
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
 
 		String methodName = result.getMethod().getMethodName();
 		System.out.println(methodName + " ---- Test Execution successfull ----");
 
 		test.log(Status.PASS, methodName + " -> PASS");
 
+		// Take - Screenshot
+		String screenShotName = methodName + "-" + new JavaUtility().getSystemInFormat();
+		WebDriverUtility wLib = new WebDriverUtility();
+		try {
+
+			String path = wLib.takeScreenShot(BaseClass.sDriver, screenShotName);
+			test.addScreenCaptureFromPath(path);
+		} catch (IOException e) {
+			e.printStackTrace();
+			e.getCause();
+		}
+
 	}
 
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
-		// saveScreenshot(result.getName(), BaseClass.sDriver);
+
 		String methodName = result.getMethod().getMethodName();
 		System.out.println(methodName + " ---- Test Execution Failed ----");
 		System.out.println(result.getThrowable());
@@ -68,8 +71,8 @@ public class ListenersImplementation implements ITestListener {
 			test.addScreenCaptureFromPath(path);
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			e.getCause();
 		}
 
 	}
@@ -85,7 +88,9 @@ public class ListenersImplementation implements ITestListener {
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
+		String methodName = result.getMethod().getMethodName();
+		((ITestListener) test).onTestFailedButWithinSuccessPercentage(result);
+		System.out.println(methodName + "Test failed but it is in defined success ratio ");
 
 	}
 
@@ -121,11 +126,5 @@ public class ListenersImplementation implements ITestListener {
 		report.flush(); // is responsible for report generation.
 
 	}
-	/**
-	 * @Attachment(value = "Screenshot of {0}", type = "image/png") public byte[]
-	 *                   saveScreenshot(String name, WebDriver driver) { return
-	 *                   (byte[]) ((TakesScreenshot)
-	 *                   driver).getScreenshotAs(OutputType.BYTES); }
-	 **/
 
 }
