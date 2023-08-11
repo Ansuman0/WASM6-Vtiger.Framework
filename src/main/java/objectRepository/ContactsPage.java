@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ContactsPage {
+import genericUtilities.WebDriverUtility;
+
+public class ContactsPage extends WebDriverUtility{
 
 	// declaration
 	@FindBy(xpath = "//img[@title='Create Contact...']")
