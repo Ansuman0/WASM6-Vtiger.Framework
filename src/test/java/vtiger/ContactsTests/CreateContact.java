@@ -19,8 +19,6 @@ import objectRepository.HomePage;
  * @author Ansuman
  *
  */
-
-
 @Epic("Web Application SmokeSuite Testing")
 @Feature("Contat Page TestCases")
 @Listeners(ListenersImplementation.class)
