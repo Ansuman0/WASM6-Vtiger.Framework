@@ -67,9 +67,9 @@ public class JavaUtility {
 		String date = dArr[2];
 		String month = dArr[1];
 		String year = dArr[5];
-		String time = dArr[3].replace(":", "-");
+		String time = dArr[2].replace(":", "-");
 
-		return date + " " + month + " " + year + " " + time;
+		return date + " " + month + " " + year + " - " + time;
 	}
 
 }
