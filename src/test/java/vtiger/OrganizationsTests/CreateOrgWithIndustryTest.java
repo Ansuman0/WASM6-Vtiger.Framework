@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
@@ -18,6 +19,7 @@ import objectRepository.OrganizationsPage;
  */
 
 @Listeners(genericUtilities.ListenersImplementation.class)
+@Parameters("browser")
 public class CreateOrgWithIndustryTest extends BaseClass {
 	
 	@Test(groups = "SmokeSuite")
