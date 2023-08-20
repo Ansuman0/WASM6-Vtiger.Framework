@@ -13,6 +13,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+
 /**
  * This class provides implementation to ITestListener Interface
  * 
@@ -20,9 +21,11 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
  *
  */
 public class ListenersImplementation implements ITestListener {
-
+	
+	
 	ExtentReports report;
 	ExtentTest test;
+	
 
 	private static final Logger Log = Logger.getLogger(ListenersImplementation.class.getName());
 
@@ -61,7 +64,7 @@ public class ListenersImplementation implements ITestListener {
 		String methodName = result.getMethod().getMethodName();
 		Log.info(methodName + " ---- Test Execution Failed ----");
 
-		Log.info(result.getThrowable()+ result.getName());
+		Log.info(result.getThrowable() + result.getName());
 
 		test.log(Status.FAIL, methodName + result.getTestName() + " -> FAIL");
 		test.log(Status.WARNING, result.getThrowable().toString());
@@ -98,7 +101,7 @@ public class ListenersImplementation implements ITestListener {
 		((ITestListener) test).onTestFailedButWithinSuccessPercentage(result);
 		Log.info(methodName + result.getTestName() + "Test failed but it is in defined success ratio ");
 		test.log(Status.INFO, methodName + result.getTestName() + " -> Test failed but it is in defined success ratio");
-
+		
 	}
 
 	public void onTestFailedWithTimeout(ITestResult result) {
@@ -120,7 +123,7 @@ public class ListenersImplementation implements ITestListener {
 		html.config().setReportName("Execution report BuildV2.3.1");
 		html.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
 		html.config().setTheme(Theme.DARK);
-
+		
 		report = new ExtentReports();
 		report.attachReporter(html);
 		report.setSystemInfo("Base Browser", "Chrome");
