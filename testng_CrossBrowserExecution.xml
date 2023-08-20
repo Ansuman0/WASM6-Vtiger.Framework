@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Suite">
-  
-  <test thread-count="2" parallel="tests" name="Test-Runner-chrome">
-  <parameter name="browser" value="Chrome"></parameter>
-    <classes>
-      <class name="vtiger.ContactsTests.CreateContactWithOrganizationTest"/>
-    </classes>
-  </test> <!-- Test -->
-  
-  
-  <test thread-count="2" parallel="tests" name="Test-Runner-firefox">
-  <parameter name="browser" value="Firefox"></parameter>
-    <classes>
-      <class name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"/>
-    </classes>
-  </test> <!-- Test -->
-  
+<suite name="TestSuite" thread-count="2">
+	
+	<test name="ChromeTest">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+			<class
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+				
+		</classes>
+	</test>
+	
+	<test name="EdgeTest">
+		<parameter name="browser" value="Edge" />
+		<classes>
+			<class
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="FirefoxTest">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->
