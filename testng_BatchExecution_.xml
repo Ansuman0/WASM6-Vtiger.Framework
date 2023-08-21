@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<groups>
+		<run>
+			<include name="RegressionSuite"></include>
+			<include name="SmokeSuite"></include>
+		</run>
+
+	</groups>
+	
+	<listeners>
+		<listener
+			class-name="genericUtilities.ListenersImplementation"></listener>
+	</listeners>
+	
+	<test thread-count="5" name="Test" preserve-order="false">
+		<parameter name="browser" value="Edge" />
+		<classes>
+			<class
+				name="vtiger.ContactsTests.CreateContactWithOrganizationTest" />
+			<class name="vtiger.ContactsTests.CreateContact" />
+			<class name="vtiger.LeadTests.CreateLead" />
+			<class
+				name="vtiger.OrganizationsTests.CreateMultipleOrganizationWithIndTest" />
+			<class
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest" />
+			<class name="vtiger.ProductTests.CreateMultipleProduct" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

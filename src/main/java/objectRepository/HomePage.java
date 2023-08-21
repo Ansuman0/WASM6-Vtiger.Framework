@@ -30,7 +30,10 @@ public class HomePage extends WebDriverUtility {
 	private WebElement ContactsLnk;
 
 	@FindBy(linkText = "Opportunities")
-	private WebElement opportunitiesLnk;
+	private WebElement OpportunitiesLnk;
+	
+	@FindBy(linkText = "Products")
+	private WebElement ProductLnk;
 
 	@FindBy(xpath = "//img[@src='themes/softed/images/user.PNG']")
 	private WebElement AdministratorImg;
@@ -66,7 +69,11 @@ public class HomePage extends WebDriverUtility {
 	}
 
 	public WebElement getOpportunitiesLnk() {
-		return opportunitiesLnk;
+		return OpportunitiesLnk;
+	}
+	
+	public WebElement getProdutsLnk() {
+		return ProductLnk;
 	}
 
 	public WebElement getAdministratorImg() {
@@ -121,6 +128,14 @@ public class HomePage extends WebDriverUtility {
 	 */
 	public void clickOnContactsLink() throws Exception {
 		ContactsLnk.click();
+	}
+	
+	/**
+	 * This method will click on Products link
+	 * 
+	 **/
+	public void clickOnProductsLink() {
+		ProductLnk.click();
 	}
 
 	/**

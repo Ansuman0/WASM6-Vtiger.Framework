@@ -6,26 +6,34 @@ import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
+import genericUtilities.ListenersImplementation;
+import io.qameta.allure.Feature;
 import objectRepository.CreateNewOrganizationPage;
 import objectRepository.HomePage;
 import objectRepository.OrganizationInfoPage;
 import objectRepository.OrganizationsPage;
-/**
- * @author Ansuman
- **/
 
+/**
+ * This class provides implementation to ITestListener Interface
+ * 
+ * @author Ansuman
+ *
+ */
+@Feature("Create Multiple Organization With Industry Test")
+@Listeners(ListenersImplementation.class)
 public class CreateMultipleOrganizationWithIndTest extends BaseClass{
 	
 
-	@Test(dataProvider = "getData")
+	@Test(dataProvider = "getData",groups="RegressionSuite")
 	public void createOrgTEst(String ORG, String INDUSTRY) throws IOException {
 
-		String ORGNAME = ORG+jUtil.getRandomNumber();
+		String ORGNAME = ORG+jUtil.generateRandomCompany();
 		
-		WebDriver driver = null;
+//		WebDriver driver = null;
 
 
 		// Step 3: Click on Organizations link
