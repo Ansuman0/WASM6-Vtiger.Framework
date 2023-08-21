@@ -2,6 +2,7 @@ package vtiger.LeadTests;
 
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
@@ -17,12 +18,13 @@ import objectRepository.LeadPage;
  * @author Ansuman
  *
  */
-@Epic("Web Application SmokeSuite Testing")
+
 @Feature("Lead Page TestCases")
 @Listeners(ListenersImplementation.class)
 public class CreateLead extends BaseClass {
-
-	@Test
+	
+	@Parameters("browser")
+	@Test(groups = "RegressionSuite")
 	public void createLeadTest() throws Exception {
 
 		// Step 3: read all the required data

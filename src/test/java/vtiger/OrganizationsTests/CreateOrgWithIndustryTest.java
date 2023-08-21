@@ -15,13 +15,16 @@ import objectRepository.OrganizationInfoPage;
 import objectRepository.OrganizationsPage;
 
 /**
+ * This class provides implementation to ITestListener Interface
+ * 
  * @author Ansuman
+ *
  */
 
 @Listeners(genericUtilities.ListenersImplementation.class)
-@Parameters("browser")
 public class CreateOrgWithIndustryTest extends BaseClass {
 	
+	@Parameters("browser")
 	@Test(groups = "SmokeSuite")
 	public void createOrgWithIndTest() throws IOException
 	{

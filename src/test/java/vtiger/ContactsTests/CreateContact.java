@@ -2,6 +2,7 @@ package vtiger.ContactsTests;
 
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
@@ -19,13 +20,13 @@ import objectRepository.HomePage;
  * @author Ansuman
  *
  */
-@Epic("Web Application SmokeSuite Testing")
-@Feature("Contat Page TestCases")
+
+@Feature("Create Contat Page TestCases")
 @Listeners(ListenersImplementation.class)
 public class CreateContact extends BaseClass {
 	
 	
-	
+	@Parameters("browser")
 	@Test(groups = "SmokeSuite")
 	public void createContactTest() throws Exception {
 		
