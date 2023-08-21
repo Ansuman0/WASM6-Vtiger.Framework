@@ -1,5 +1,6 @@
 package genericUtilities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
@@ -22,28 +23,46 @@ public class JavaUtility {
 		Random r = new Random();
 		return r.nextInt(1000);
 	}
+
 	/**
 	 * This method genrate fake data by using Datafacker class.
+	 * 
 	 * @return
 	 */
 
-	public  String generateRandomFirstName() {
+	public String generateRandomFirstName() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
 		// To generate a valid random first name
 		return faker.name().firstName();
 	}
-	public  String generateRandomLastName() {
+
+	public String generateRandomLastName() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
 		// To generate a valid random first name
 		return faker.name().firstName();
 	}
-	public  String generateRandomCompany() {
+
+	public String generateRandomCompany() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
 		// To generate a valid random first name
 		return faker.company().name();
+	}
+
+	public String generateRandomIndusty() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.company().industry();
+	}
+
+	public String generateRandomProduct() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.commerce().productName();
 	}
 
 	/**
@@ -70,6 +89,18 @@ public class JavaUtility {
 		String time = dArr[2].replace(":", "-");
 
 		return date + " " + month + " " + year + " - " + time;
+	}
+
+	/**
+	 * This method will generate system date and provide
+	 * 
+	 * @return
+	 */
+	public String getsimpleDateFormat() {
+		Date d = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String date = simpleDateFormat.format(new Date());
+		return date;
 	}
 
 }

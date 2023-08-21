@@ -1,11 +1,13 @@
 package vtiger.ContactsTests;
 
 import org.testng.Assert;
+
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
+import io.qameta.allure.Feature;
 import objectRepository.ContactsInfoPage;
 import objectRepository.ContactsPage;
 import objectRepository.CreateNewContactPage;
@@ -13,13 +15,19 @@ import objectRepository.CreateNewOrganizationPage;
 import objectRepository.HomePage;
 import objectRepository.OrganizationInfoPage;
 import objectRepository.OrganizationsPage;
-/**
- * @author Ansuman
- */
-@Listeners(genericUtilities.ListenersImplementation.class)
-@Parameters("browser")
-public class CreateContactWithOrganizationTest extends BaseClass {
 
+
+/**
+ * This class provides implementation to ITestListener Interface
+ * 
+ * @author Ansuman
+ *
+ */
+
+@Feature("Create Contact With Organization TestCases")
+public class CreateContactWithOrganizationTest extends BaseClass {
+	
+	@Parameters("browser")
     @Test(groups = "RegressionSuite")
     public void createContactWithOrgTest() throws Exception
 	{
