@@ -44,7 +44,7 @@ public class CreateLead extends BaseClass {
 		lp.clickOnLeadLookUpImage();
 
 		String createLeadPageHeader = lp.getCreateLeadPageHeader();
-		Assert.assertTrue(createLeadPageHeader.contains("Creating New Lead"));
+		Assert.assertFalse(createLeadPageHeader.contains("Creating New Lead"));
 		System.out.println("Create Lead Page Header Matched : " + createLeadPageHeader);
 
 		lp.createNewLead(driver, firstName, lastName, company);

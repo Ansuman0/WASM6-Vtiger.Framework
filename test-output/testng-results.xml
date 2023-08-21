@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-18T23:24:57 IST" name="Default suite" finished-at="2023-08-18T23:27:19 IST" duration-ms="141641">
+  <suite started-at="2023-08-19T23:56:40 IST" name="Default suite" finished-at="2023-08-19T23:56:49 IST" duration-ms="9946">
     <groups>
     </groups>
-    <test started-at="2023-08-18T23:24:57 IST" name="Default test" finished-at="2023-08-18T23:27:19 IST" duration-ms="141641">
+    <test started-at="2023-08-19T23:56:40 IST" name="Default test" finished-at="2023-08-19T23:56:49 IST" duration-ms="9946">
       <class name="vtiger.LeadTests.CreateLead">
-        <test-method is-config="true" signature="bsConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@415b0b49]" started-at="2023-08-18T23:24:57 IST" name="bsConfig" finished-at="2023-08-18T23:24:57 IST" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="bsConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@5be1d0a4]" started-at="2023-08-19T23:56:40 IST" name="bsConfig" finished-at="2023-08-19T23:56:40 IST" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bsConfig -->
-        <test-method is-config="true" signature="bcConfig(java.lang.String,org.testng.ITestContext)[pri:0, instance:vtiger.LeadTests.CreateLead@415b0b49]" started-at="2023-08-18T23:24:57 IST" name="bcConfig" finished-at="2023-08-18T23:25:01 IST" duration-ms="3444" status="PASS">
+        <test-method is-config="true" signature="bcConfig(java.lang.String,org.testng.ITestContext)[pri:0, instance:vtiger.LeadTests.CreateLead@5be1d0a4]" started-at="2023-08-19T23:56:40 IST" name="bcConfig" finished-at="2023-08-19T23:56:43 IST" duration-ms="2839" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -20,18 +20,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@46a0ef6f]]>
+                <![CDATA[org.testng.TestRunner@6afced93]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bcConfig -->
-        <test-method is-config="true" signature="bmConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@415b0b49]" started-at="2023-08-18T23:25:01 IST" name="bmConfig" finished-at="2023-08-18T23:25:03 IST" duration-ms="1921" status="PASS">
+        <test-method is-config="true" signature="bmConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@5be1d0a4]" started-at="2023-08-19T23:56:43 IST" name="bmConfig" finished-at="2023-08-19T23:56:45 IST" duration-ms="2017" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bmConfig -->
-        <test-method signature="createLeadTest()[pri:0, instance:vtiger.LeadTests.CreateLead@415b0b49]" started-at="2023-08-18T23:25:03 IST" name="createLeadTest" finished-at="2023-08-18T23:25:07 IST" duration-ms="4313" status="FAIL">
+        <test-method signature="createLeadTest()[pri:0, instance:vtiger.LeadTests.CreateLead@5be1d0a4]" started-at="2023-08-19T23:56:45 IST" name="createLeadTest" finished-at="2023-08-19T23:56:48 IST" duration-ms="3377" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [false] but found [true]]]>
@@ -42,7 +42,7 @@ at org.testng.Assert.fail(Assert.java:99)
 at org.testng.Assert.failNotEquals(Assert.java:1037)
 at org.testng.Assert.assertFalse(Assert.java:67)
 at org.testng.Assert.assertFalse(Assert.java:77)
-at vtiger.LeadTests.CreateLead.createLeadTest(CreateLead.java:49)
+at vtiger.LeadTests.CreateLead.createLeadTest(CreateLead.java:47)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,15 +77,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createLeadTest -->
-        <test-method is-config="true" signature="amConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@415b0b49]" started-at="2023-08-18T23:27:17 IST" name="amConfig" finished-at="2023-08-18T23:27:19 IST" duration-ms="1382" status="PASS">
+        <test-method is-config="true" signature="amConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@5be1d0a4]" started-at="2023-08-19T23:56:48 IST" name="amConfig" finished-at="2023-08-19T23:56:49 IST" duration-ms="957" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- amConfig -->
-        <test-method is-config="true" signature="acConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@415b0b49]" started-at="2023-08-18T23:27:19 IST" name="acConfig" finished-at="2023-08-18T23:27:19 IST" duration-ms="204" status="PASS">
+        <test-method is-config="true" signature="acConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@5be1d0a4]" started-at="2023-08-19T23:56:49 IST" name="acConfig" finished-at="2023-08-19T23:56:49 IST" duration-ms="190" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- acConfig -->
-        <test-method is-config="true" signature="asConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@415b0b49]" started-at="2023-08-18T23:27:34 IST" name="asConfig" finished-at="2023-08-18T23:27:34 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="asConfig()[pri:0, instance:vtiger.LeadTests.CreateLead@5be1d0a4]" started-at="2023-08-19T23:56:50 IST" name="asConfig" finished-at="2023-08-19T23:56:50 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- asConfig -->
