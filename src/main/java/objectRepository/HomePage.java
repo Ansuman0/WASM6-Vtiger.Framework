@@ -34,6 +34,12 @@ public class HomePage extends WebDriverUtility {
 	
 	@FindBy(linkText = "Products")
 	private WebElement ProductLnk;
+	
+	@FindBy(linkText="More")
+	private WebElement moreLnk;
+	
+	@FindBy(name="Campaigns")
+	private WebElement campaignBtn;
 
 	@FindBy(xpath = "//img[@src='themes/softed/images/user.PNG']")
 	private WebElement AdministratorImg;
@@ -74,6 +80,13 @@ public class HomePage extends WebDriverUtility {
 	
 	public WebElement getProdutsLnk() {
 		return ProductLnk;
+	}
+	
+	public WebElement getMoreLnk(){
+		return moreLnk;
+	}
+	public WebElement getCampaignBtn(){
+		return campaignBtn;
 	}
 
 	public WebElement getAdministratorImg() {
@@ -136,6 +149,19 @@ public class HomePage extends WebDriverUtility {
 	 **/
 	public void clickOnProductsLink() {
 		ProductLnk.click();
+	}
+	
+	/**
+	 * This will click on MoreLink Icon and Move to Click on campaignBtn.
+	 */
+	public void clickOnMoreLink() {
+		moreLnk.click();
+		
+	}
+	
+	public void clickOnCampaignBtn(WebDriver driver) {
+		waitForElementToBeVisisble(driver, campaignBtn);
+		campaignBtn.click();
 	}
 
 	/**

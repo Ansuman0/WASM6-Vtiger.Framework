@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	
+	
+	<listeners>
+		<listener
+			class-name="genericUtilities.ListenersImplementation"></listener>
+	</listeners>
+
+	<test thread-count="5" name="Test">
+		<parameter name="browser" value="Edge" />
+
+
+		<classes>
+			<class name="vtiger.ContactsTests.CreateContact"></class>
+			<class
+				name="vtiger.ContactsTests.CreateContactWithOrganizationTest"></class>
+			<class
+				name="vtiger.OrganizationsTests.CreateMultipleOrganizationWithIndTest"></class>
+			<class name="vtiger.LeadTests.CreateLead"></class>
+			<class
+				name="vtiger.OrganizationsTests.CreateMultipleOrganizationWithIndTest"></class>
+			<class
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+			<class
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

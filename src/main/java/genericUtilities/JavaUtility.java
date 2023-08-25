@@ -1,6 +1,7 @@
 package genericUtilities;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
@@ -65,6 +66,13 @@ public class JavaUtility {
 		return faker.commerce().productName();
 	}
 
+	public String generateRandomCampaigingName() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.company().buzzword() + " Campaign";
+	}
+
 	/**
 	 * This method will get system date
 	 * 
@@ -101,6 +109,16 @@ public class JavaUtility {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String date = simpleDateFormat.format(new Date());
 		return date;
+	}
+
+	public static  String getFutureDateString() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DAY_OF_YEAR, 2);
+		Date futureDateTime = calendar.getTime();
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = dateFormat.format(futureDateTime);
+		return formattedDate;
 	}
 
 }
