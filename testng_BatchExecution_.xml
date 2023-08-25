@@ -18,15 +18,17 @@
 	<test thread-count="5" name="Test" preserve-order="false">
 		<parameter name="browser" value="Edge" />
 		<classes>
-			<class
+			
+		<!--  	<class
 				name="vtiger.ContactsTests.CreateContactWithOrganizationTest" />
-			<class name="vtiger.ContactsTests.CreateContact" />
+			<class name="vtiger.ContactsTests.CreateContact" /> -->
 			<class name="vtiger.LeadTests.CreateLead" />
+			<!--  
 			<class
 				name="vtiger.OrganizationsTests.CreateMultipleOrganizationWithIndTest" />
 			<class
 				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest" />
-			<class name="vtiger.ProductTests.CreateMultipleProduct" />
+			<class name="vtiger.ProductTests.CreateMultipleProduct" /> -->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

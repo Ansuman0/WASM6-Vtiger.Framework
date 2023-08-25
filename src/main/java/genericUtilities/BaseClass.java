@@ -62,7 +62,7 @@ public class BaseClass {
 		pUtil.readLogoDataFromPropertyFile();
 		
 		
-		//BROWSER = pUtil.readDataFromPrpertyFile("browser");
+		BROWSER = pUtil.readDataFromPrpertyFile("browser");
 		String URL = pUtil.readDataFromPrpertyFile("url");
 		
 		
