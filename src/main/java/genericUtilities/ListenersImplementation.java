@@ -58,7 +58,7 @@ public class ListenersImplementation implements ITestListener {
 		 */
 
 	}
-
+	
 	public void onTestFailure(ITestResult result) {
 
 		String methodName = result.getMethod().getMethodName();
@@ -119,14 +119,14 @@ public class ListenersImplementation implements ITestListener {
 		ExtentSparkReporter html = new ExtentSparkReporter(
 				".\\ExtentReports\\Report-" + new JavaUtility().getSystemInFormat() + ".html");
 
-		html.config().setDocumentTitle("Vtiger Execution Report");
+		html.config().setDocumentTitle("Vtiger Test Execution Report");
 		html.config().setReportName("Execution report BuildV2.3.1");
 		html.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
 		html.config().setTheme(Theme.DARK);
 		
 		report = new ExtentReports();
 		report.attachReporter(html);
-		report.setSystemInfo("Base Browser", "Chrome");
+		report.setSystemInfo("Base Browser", context.getSuite().getParameter("value"));
 		report.setSystemInfo("Base URL", "http://localhost:8888/");
 		report.setSystemInfo("Base Platform", "Windows - 11");
 		// report.setSystemInfo("Reporter Name", "Ansuman");
