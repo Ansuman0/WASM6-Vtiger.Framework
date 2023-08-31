@@ -2,6 +2,7 @@
 *.class
 
 # Log file
+Logs
 *.log
 
 # BlueJ files
@@ -43,4 +44,7 @@ pom.nexus.xml
 *.DS_Store
 
 # Allure
-allure-report
+allure-results
+
+#ExtentReports
+ExtentReports
