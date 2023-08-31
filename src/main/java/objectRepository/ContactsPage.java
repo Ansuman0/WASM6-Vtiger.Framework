@@ -82,10 +82,22 @@ public class ContactsPage extends WebDriverUtility {
 		CreateContactImg.click();
 	}
 
+	// Business library
+	/**
+	 * This method will create a Contact with lastName.
+	 * 
+	 * @param LASTNAME
+	 */
+	public void createNewContact(String LASTNAME) {
+		LastNameEdt.sendKeys(LASTNAME);
+		SaveBtn.click();
+	}
+
 	/**
 	 * This method will create a new contact.
 	 * 
 	 * @param driver
+	 * @param firtname
 	 * @param LASTNAME
 	 */
 	public void createContact(WebDriver driver, String firtname, String LASTNAME) {
