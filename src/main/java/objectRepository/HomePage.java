@@ -31,15 +31,18 @@ public class HomePage extends WebDriverUtility {
 
 	@FindBy(linkText = "Opportunities")
 	private WebElement OpportunitiesLnk;
-	
+
 	@FindBy(linkText = "Products")
 	private WebElement ProductLnk;
-	
-	@FindBy(linkText="More")
+
+	@FindBy(linkText = "More")
 	private WebElement moreLnk;
-	
-	@FindBy(name="Campaigns")
-	private WebElement campaignBtn;
+
+	@FindBy(name = "Campaigns")
+	private WebElement campaignLnk;
+
+	@FindBy(name = "Vendors")
+	private WebElement vendorsLnk;
 
 	@FindBy(xpath = "//img[@src='themes/softed/images/user.PNG']")
 	private WebElement AdministratorImg;
@@ -77,16 +80,21 @@ public class HomePage extends WebDriverUtility {
 	public WebElement getOpportunitiesLnk() {
 		return OpportunitiesLnk;
 	}
-	
+
 	public WebElement getProdutsLnk() {
 		return ProductLnk;
 	}
-	
-	public WebElement getMoreLnk(){
+
+	public WebElement getMoreLnk() {
 		return moreLnk;
 	}
-	public WebElement getCampaignBtn(){
-		return campaignBtn;
+
+	public WebElement getCampaignLnk() {
+		return campaignLnk;
+	}
+
+	public WebElement getVendorsLnk() {
+		return vendorsLnk;
 	}
 
 	public WebElement getAdministratorImg() {
@@ -142,7 +150,7 @@ public class HomePage extends WebDriverUtility {
 	public void clickOnContactsLink() throws Exception {
 		ContactsLnk.click();
 	}
-	
+
 	/**
 	 * This method will click on Products link
 	 * 
@@ -150,18 +158,24 @@ public class HomePage extends WebDriverUtility {
 	public void clickOnProductsLink() {
 		ProductLnk.click();
 	}
-	
+
 	/**
 	 * This will click on MoreLink Icon and Move to Click on campaignBtn.
 	 */
+
 	public void clickOnMoreLink() {
 		moreLnk.click();
-		
 	}
-	
-	public void clickOnCampaignBtn(WebDriver driver) {
-		waitForElementToBeVisisble(driver, campaignBtn);
-		campaignBtn.click();
+
+	public void clickOnCampaignLnk(WebDriver driver) {
+		waitForElementToBeVisisble(driver, campaignLnk);
+		campaignLnk.click();
+	}
+
+	public void clickOnVendorsLnk(WebDriver driver) {
+		moreLnk.click();
+		waitForElementToBeVisisble(driver, vendorsLnk);
+		vendorsLnk.click();
 	}
 
 	/**
