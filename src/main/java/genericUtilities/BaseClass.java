@@ -37,6 +37,7 @@ public class BaseClass {
 	public WebDriverUtility wUtil = new WebDriverUtility();
 	public ExcelFileUtility eUtil = new ExcelFileUtility();
 	public JavaUtility jUtil = new JavaUtility();
+	public RandomDataUtility rUtil = new RandomDataUtility();
 	public ListenersImplementation lmpUtil = new ListenersImplementation();
 
 	public WebDriver driver = null;

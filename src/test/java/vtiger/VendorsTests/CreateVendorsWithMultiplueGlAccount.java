@@ -30,13 +30,13 @@ public class CreateVendorsWithMultiplueGlAccount extends BaseClass {
 	@Test(dataProvider = "getData", groups = "RegressionSuite")
 	public void createVendorsTest(String gLAccount) {
 
-		String vendername = jUtil.generateRandomCompany();
-		String email = jUtil.generateFakeEmails();
-		String category = jUtil.generateRandomIndusty();
-		String phone = jUtil.generateFakePhoneNumber();
-		String website = jUtil.generateFakeWebsiteName();
-		String address = jUtil.generateFullAddress();
-		String description = jUtil.generateRandomCompanyDetails();
+		String vendername = rUtil.generateRandomCompany();
+		String email = rUtil.generateFakeEmails();
+		String category = rUtil.generateRandomIndusty();
+		String phone = rUtil.generateFakePhoneNumber();
+		String website = rUtil.generateFakeWebsiteName();
+		String address = rUtil.generateFullAddress();
+		String description = rUtil.generateRandomCompanyDetails();
 
 		HomePage hp = new HomePage(driver);
 		hp.clickOnVendorsLnk(driver);

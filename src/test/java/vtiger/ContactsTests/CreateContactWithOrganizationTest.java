@@ -10,7 +10,7 @@ import genericUtilities.BaseClass;
 import io.qameta.allure.Feature;
 import objectRepository.ContactsInfoPage;
 import objectRepository.ContactsPage;
-import objectRepository.CreateNewContactPage;
+import objectRepository.ContactsPage;
 import objectRepository.CreateNewOrganizationPage;
 import objectRepository.HomePage;
 import objectRepository.OrganizationInfoPage;
@@ -32,8 +32,9 @@ public class CreateContactWithOrganizationTest extends BaseClass {
     public void createContactWithOrgTest() throws Exception
 	{
 
-		String ORGNAME = eUtil.readDataFromExcel("Contact", 4, 3) + jUtil.getRandomNumber();
-		String LASTNAME = eUtil.readDataFromExcel("Contact", 4, 2);
+		String ORGNAME = rUtil.generateRandomCompany();
+		String firstNmame = rUtil.generateRandomFirstName();
+		String LASTNAME = rUtil.generateRandomLastName();
 
 		// Step 3: Click on Organizations link
 		HomePage hp = new HomePage(driver);
@@ -60,8 +61,8 @@ public class CreateContactWithOrganizationTest extends BaseClass {
 		cp.clickOnContactsLookUpImage();
 
 		// Step 9: Create Contact
-		CreateNewContactPage cncp = new CreateNewContactPage(driver);
-		cncp.createNewContact(driver, LASTNAME, ORGNAME);
+		ContactsPage cncp = new ContactsPage(driver);
+		cncp.createContactWithOrg(driver, firstNmame, LASTNAME, ORGNAME);
 
 		// Step 10: Validate for Organization
 	    ContactsInfoPage cip = new ContactsInfoPage(driver);
@@ -71,10 +72,4 @@ public class CreateContactWithOrganizationTest extends BaseClass {
 		
 	}
 
-    
-    @Test
-    public void demo()
-    {
-    	System.out.println("This is demo");
-    }
 }

@@ -30,7 +30,7 @@ public class CreateMultipleCampaiging extends BaseClass {
 	@Test(dataProvider = "getData", groups = "RegressionSuite")
 	public void createCampaigingTest(String campaignType) {
 
-		String campaingName = jUtil.generateRandomCampaigingName();
+		String campaingName = rUtil.generateRandomCampaigingName();
 		String closeDate = jUtil.getFutureDateString();
 		System.out.println("Date :"+closeDate);
 

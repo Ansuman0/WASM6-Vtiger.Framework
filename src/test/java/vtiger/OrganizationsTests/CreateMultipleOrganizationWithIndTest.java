@@ -25,16 +25,17 @@ import objectRepository.OrganizationsPage;
  */
 @Feature("Create Multiple Organization With Industry Test")
 @Listeners(ListenersImplementation.class)
-public class CreateMultipleOrganizationWithIndTest extends BaseClass{
-	
+public class CreateMultipleOrganizationWithIndTest extends BaseClass {
 
-	@Test(dataProvider = "getData",groups="RegressionSuite")
-	public void createOrgTEst(String ORG, String INDUSTRY) throws IOException {
+	@Test(dataProvider = "getData", groups = "RegressionSuite")
+	public void createOrgTEst(/* String ORG, */ String INDUSTRY) throws IOException {
 
-		String ORGNAME = ORG+jUtil.generateRandomCompany();
-		
+		/*
+		 * ORG is commed out .which will read data from execl.
+		 */
+		String ORGNAME = /* ORG+ */rUtil.generateRandomCompany();
+
 //		WebDriver driver = null;
-
 
 		// Step 3: Click on Organizations link
 		HomePage hp = new HomePage(driver);
@@ -51,14 +52,13 @@ public class CreateMultipleOrganizationWithIndTest extends BaseClass{
 		// Step 8: Validate
 		OrganizationInfoPage oip = new OrganizationInfoPage(driver);
 		String orgHeader = oip.getHeader();
-        Assert.assertTrue(orgHeader.contains(ORGNAME));
-		
+		Assert.assertTrue(orgHeader.contains(ORGNAME));
 
 	}
 
 	@DataProvider
 	public Object[][] getData() throws EncryptedDocumentException, IOException {
-		return eUtil.readMultipleData("DatProviderOrg");
+		return eUtil.readMultipleData("DataProviderIndustryType");
 	}
 
 }
