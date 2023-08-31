@@ -1,8 +1,5 @@
 package genericUtilities;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -10,19 +7,14 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import io.qameta.allure.Attachment;
 
 /**
  * This class consists of generic methods related to all web driver actions
@@ -68,38 +60,6 @@ public class WebDriverUtility {
 	public void waitForElementToBeVisisble(WebDriver driver, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOf(element));
-	}
-
-	/**
-	 * This method will use Fluent wait to check the visibility for Elemet.
-	 * 
-	 * @param driver
-	 * @param element
-	 */
-	public void fluentWait(WebDriver driver, WebElement element) {
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
-				.pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
-		wait.until(ExpectedConditions.visibilityOf(element));
-	}
-
-	/**
-	 * This is a custom wait which is used to wait for element and perform click
-	 * action
-	 * 
-	 * @param element
-	 * @throws InterruptedException
-	 */
-	public void waitAndClickOnElement(WebElement element) throws InterruptedException {
-		int count = 0;
-		while (count < 10) {
-			try {
-				element.click();
-				break;
-			} catch (Exception e) {
-				Thread.sleep(1000);
-				count++;
-			}
-		}
 	}
 
 	/**
@@ -294,7 +254,7 @@ public class WebDriverUtility {
 	 * @return
 	 * @throws IOException
 	 */
-	@Attachment(value = "ScreenShots of {0}", type = "image/png")
+//	@Attachment(value = "ScreenShots of {0}", type = "image/png")
 	public String takeScreenShot(WebDriver driver, String screenShotName) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
@@ -316,30 +276,10 @@ public class WebDriverUtility {
 
 	}
 
-	/**
-	 * To Scroll Window Varioes Methos are Below .
-	 */
-	/**
-	 * This method will scroll to an element by Webelemet Value.
-	 * 
-	 * @param driver
-	 * @param element
-	 */
 	public void scrollActionToElement(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoViewIfNeeded()", element);
 
-	}
-
-	/**
-	 * This method will press the enter key by usring robort Class
-	 * 
-	 * @throws AWTException
-	 */
-	public void pressEnter() throws AWTException {
-		Robot r = new Robot();
-		r.keyPress(KeyEvent.VK_ENTER);
-		r.keyRelease(KeyEvent.VK_ENTER);
 	}
 
 	/**

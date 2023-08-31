@@ -34,43 +34,74 @@ public class JavaUtility {
 	public String generateRandomFirstName() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
-		// To generate a valid random first name
 		return faker.name().firstName();
 	}
 
 	public String generateRandomLastName() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
-		// To generate a valid random first name
 		return faker.name().firstName();
 	}
 
 	public String generateRandomCompany() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
-		// To generate a valid random first name
 		return faker.company().name();
 	}
 
 	public String generateRandomIndusty() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
-		// To generate a valid random first name
 		return faker.company().industry();
+	}
+
+	public String generateRandomCompanyDetails() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		return faker.company().catchPhrase();
 	}
 
 	public String generateRandomProduct() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
-		// To generate a valid random first name
 		return faker.commerce().productName();
 	}
 
 	public String generateRandomCampaigingName() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
-		// To generate a valid random first name
 		return faker.company().buzzword() + " Campaign";
+	}
+
+	public String generateFakeEmails() {
+		Faker faker = new Faker();
+		String username = faker.name().username().replaceAll("[^a-zA-Z0-9]", "");
+		String domain = faker.internet().domainName();
+		return username + "@" + domain;
+	}
+
+	public String generateFakeWebsiteName() {
+		Faker faker = new Faker();
+		String prefix = faker.color().name().toLowerCase();
+		String domain = faker.internet().domainName();
+		return prefix + domain;
+	}
+
+	public String generateFullAddress() {
+		Faker faker = new Faker();
+		String streetAddress = faker.address().streetAddress();
+		String city = faker.address().city();
+		String state = faker.address().state();
+		String zipCode = faker.address().zipCode();
+		String country = faker.address().country();
+
+		String fullAddress = streetAddress + ", " + city + ", " + state + " " + zipCode + ", " + country;
+		return fullAddress;
+	}
+
+	public String generateFakePhoneNumber() {
+		Faker faker = new Faker();
+		return faker.phoneNumber().cellPhone();
 	}
 
 	/**
@@ -111,7 +142,7 @@ public class JavaUtility {
 		return date;
 	}
 
-	public static  String getFutureDateString() {
+	public String getFutureDateString() {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.DAY_OF_YEAR, 2);
 		Date futureDateTime = calendar.getTime();

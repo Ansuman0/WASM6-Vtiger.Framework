@@ -10,7 +10,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
-import genericUtilities.JavaUtility;
 import genericUtilities.ListenersImplementation;
 import io.qameta.allure.Feature;
 import objectRepository.CampaigingPage;
@@ -32,12 +31,12 @@ public class CreateMultipleCampaiging extends BaseClass {
 	public void createCampaigingTest(String campaignType) {
 
 		String campaingName = jUtil.generateRandomCampaigingName();
-		String closeDate = JavaUtility.getFutureDateString();
+		String closeDate = jUtil.getFutureDateString();
 		System.out.println("Date :"+closeDate);
 
 		HomePage hp = new HomePage(driver);
 		hp.clickOnMoreLink();
-		hp.clickOnCampaignBtn(driver);
+		hp.clickOnCampaignLnk(driver);
 
 		CampaigingPageInfo cpi = new CampaigingPageInfo(driver);
 

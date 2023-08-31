@@ -69,7 +69,7 @@ public class CampaigingPage extends WebDriverUtility {
 	// Business Library
 
 	/**
-	 * This method will click on Create Product look up image
+	 * This method will click on Create Campaiging look up image
 	 */
 	public void clickOnCampaigingLookUpImage() {
 		getCreateCampaigingLookUpImg().click();
