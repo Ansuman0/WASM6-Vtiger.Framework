@@ -45,8 +45,8 @@ public class VendorsPage extends WebDriverUtility {
 	/**
 	 * Description Name:
 	 */
-	@FindBy(xpath = "//input[@class='detailedViewTextBox']")
-	private WebElement detailedTextBox;
+	@FindBy(xpath = "(//textarea[@class='detailedViewTextBox'])[2]")
+	private WebElement descriptionEdt;
 
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
 	private WebElement SaveBtn;
@@ -99,7 +99,7 @@ public class VendorsPage extends WebDriverUtility {
 	}
 
 	public WebElement getDetailedTextBox() {
-		return detailedTextBox;
+		return descriptionEdt;
 	}
 
 	public WebElement getSaveBtn() {
@@ -155,7 +155,7 @@ public class VendorsPage extends WebDriverUtility {
 
 		// Description Name:
 		scrollAction(driver);
-		waitForElementToBeVisisble(driver, detailedTextBox);
+		waitForElementToBeVisisble(driver, descriptionEdt);
 		getDetailedTextBox().sendKeys(description);
 
 		// save
@@ -203,7 +203,7 @@ public class VendorsPage extends WebDriverUtility {
 
 		// Description Name:
 		scrollAction(driver);
-		waitForElementToBeVisisble(driver, detailedTextBox);
+		waitForElementToBeVisisble(driver, descriptionEdt);
 		getDetailedTextBox().sendKeys(description);
 
 		// save
