@@ -95,7 +95,6 @@ public class WebDriverUtility {
 			try {
 				element.click();
 				break;
-
 			} catch (Exception e) {
 				Thread.sleep(1000);
 				count++;
