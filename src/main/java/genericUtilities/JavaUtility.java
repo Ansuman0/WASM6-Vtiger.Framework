@@ -38,7 +38,8 @@ public class JavaUtility {
 	 * 
 	 * @return
 	 */
-	public String getSystemInFormat() {
+	public String getSystemDateInFormat() {
+
 		Date d = new Date();
 		String[] dArr = d.toString().split(" ");
 		String date = dArr[2];

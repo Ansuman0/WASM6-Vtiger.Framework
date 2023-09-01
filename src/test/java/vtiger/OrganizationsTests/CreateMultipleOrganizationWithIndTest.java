@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 import genericUtilities.BaseClass;
 import genericUtilities.ListenersImplementation;
 import io.qameta.allure.Feature;
-import objectRepository.CreateNewOrganizationPage;
 import objectRepository.HomePage;
 import objectRepository.OrganizationInfoPage;
 import objectRepository.OrganizationsPage;
@@ -46,8 +45,8 @@ public class CreateMultipleOrganizationWithIndTest extends BaseClass {
 		op.clickOnCreateOrgLookUpImg();
 
 		// Step 5: Create Organization with mandatory fields
-		CreateNewOrganizationPage cnop = new CreateNewOrganizationPage(driver);
-		cnop.createNewOrganization(ORGNAME, INDUSTRY);
+		OrganizationsPage cnop = new OrganizationsPage(driver);
+		cnop.createOrganizationWithInd(ORGNAME, INDUSTRY);
 
 		// Step 8: Validate
 		OrganizationInfoPage oip = new OrganizationInfoPage(driver);

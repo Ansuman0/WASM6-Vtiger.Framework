@@ -2,7 +2,6 @@ package vtiger.ContactsTests;
 
 import org.testng.Assert;
 
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -10,12 +9,9 @@ import genericUtilities.BaseClass;
 import io.qameta.allure.Feature;
 import objectRepository.ContactsInfoPage;
 import objectRepository.ContactsPage;
-import objectRepository.ContactsPage;
-import objectRepository.CreateNewOrganizationPage;
 import objectRepository.HomePage;
 import objectRepository.OrganizationInfoPage;
 import objectRepository.OrganizationsPage;
-
 
 /**
  * This class provides implementation to ITestListener Interface
@@ -26,11 +22,10 @@ import objectRepository.OrganizationsPage;
 
 @Feature("Create Contact With Organization TestCases")
 public class CreateContactWithOrganizationTest extends BaseClass {
-	
+
 	@Parameters("browser")
-    @Test(groups = "RegressionSuite")
-    public void createContactWithOrgTest() throws Exception
-	{
+	@Test(groups = "RegressionSuite")
+	public void createContactWithOrgTest() throws Exception {
 
 		String ORGNAME = rUtil.generateRandomCompany();
 		String firstNmame = rUtil.generateRandomFirstName();
@@ -45,13 +40,13 @@ public class CreateContactWithOrganizationTest extends BaseClass {
 		op.clickOnCreateOrgLookUpImg();
 
 		// Step 5: Create Organization with mandatory fields
-		CreateNewOrganizationPage cnop = new CreateNewOrganizationPage(driver);
-		cnop.createNewOrganization(ORGNAME);
-		
+		OrganizationsPage cnop = new OrganizationsPage(driver);
+		cnop.createOrganization(ORGNAME);
+
 		// Step 6: Validate for Organization
 		OrganizationInfoPage oip = new OrganizationInfoPage(driver);
 		String orgHeader = oip.getHeader();
-		Assert.assertTrue(orgHeader.contains(ORGNAME));//fail
+		Assert.assertTrue(orgHeader.contains(ORGNAME));// fail
 
 		// Step 7: Navigate to Contacts link
 		hp.clickOnContactsLink();
@@ -65,11 +60,10 @@ public class CreateContactWithOrganizationTest extends BaseClass {
 		cncp.createContactWithOrg(driver, firstNmame, LASTNAME, ORGNAME);
 
 		// Step 10: Validate for Organization
-	    ContactsInfoPage cip = new ContactsInfoPage(driver);
-	    String ContactHeader = cip.getContactHeader();
+		ContactsInfoPage cip = new ContactsInfoPage(driver);
+		String ContactHeader = cip.getContactHeader();
 		Assert.assertTrue(ContactHeader.contains(LASTNAME));
-		
-		
+
 	}
 
 }

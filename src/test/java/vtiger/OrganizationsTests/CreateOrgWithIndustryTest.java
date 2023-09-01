@@ -9,7 +9,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
-import objectRepository.CreateNewOrganizationPage;
 import objectRepository.HomePage;
 import objectRepository.OrganizationInfoPage;
 import objectRepository.OrganizationsPage;
@@ -50,8 +49,8 @@ public class CreateOrgWithIndustryTest extends BaseClass {
 		Reporter.log("Click on Create Org Look Up Image", true);
 
 		// Step 5: Create Organization with mandatory fields
-		CreateNewOrganizationPage cnop = new CreateNewOrganizationPage(driver);
-		cnop.createNewOrganization(ORGNAME, INDUSTRY);
+		OrganizationsPage cnop = new OrganizationsPage(driver);
+		cnop.createOrganizationWithInd(ORGNAME, INDUSTRY);
 		Reporter.log("Organization Created with industry", true);
 
 		// Step 8: Validate
