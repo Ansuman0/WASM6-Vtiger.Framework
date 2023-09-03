@@ -25,7 +25,7 @@ public class RandomDataUtility {
 	public String generateRandomLastName() {
 		// Create an object of Faker class with default locale i.e ENG
 		Faker faker = new Faker();
-		return faker.name().firstName();
+		return faker.name().lastName();
 	}
 
 	public String generateRandomCompany() {
@@ -94,4 +94,16 @@ public class RandomDataUtility {
 		return faker.phoneNumber().cellPhone();
 	}
 
+	public String generateOpportunity() {
+		Faker faker = new Faker();
+
+		// Generate fake opportunity data
+		return faker.company().buzzword() + "opportunity";
+	}
+
+	public String generateDescription() {
+		Faker faker = new Faker();
+		String description = faker.lorem().sentence();
+		return description;
+	}
 }

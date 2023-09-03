@@ -59,7 +59,7 @@ public class CreateContactWithOrganizationTest extends BaseClass {
 		ContactsPage cncp = new ContactsPage(driver);
 		cncp.createContactWithOrg(driver, firstNmame, LASTNAME, ORGNAME);
 
-		// Step 10: Validate for Organization
+		// Step 10: Validate for Contact 
 		ContactsInfoPage cip = new ContactsInfoPage(driver);
 		String ContactHeader = cip.getContactHeader();
 		Assert.assertTrue(ContactHeader.contains(LASTNAME));

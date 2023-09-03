@@ -208,7 +208,6 @@ public class VendorsPage extends WebDriverUtility {
 
 		// save
 		mouseHoverAction(driver, SaveBtn);
-
 		getSaveBtn().click();
 
 	}

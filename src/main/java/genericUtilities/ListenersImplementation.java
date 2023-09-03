@@ -27,7 +27,7 @@ public class ListenersImplementation implements ITestListener {
 
 	private static final Logger Log = Logger.getLogger(ListenersImplementation.class.getName());
 
-	@Parameters({ "OS", "browser" })
+	// @Parameters({ "OS", "browser" })
 	public void onTestStart(ITestResult result) {
 
 		// run for every @Test start
@@ -115,7 +115,7 @@ public class ListenersImplementation implements ITestListener {
 
 	}
 
-	// @Parameters({ "OS", "browser" })
+	@Parameters({ "OS", "browser" })
 	public void onStart(ITestContext context) {
 
 		Reporter.log("Execution of suite started", true);
@@ -134,7 +134,11 @@ public class ListenersImplementation implements ITestListener {
 
 		report = new ExtentReports();
 		report.attachReporter(htmlReport);
-		report.setSystemInfo("Base Browser", context.getSuite().getParameter("value"));
+		if ((context.getSuite().getParameter("value")) != null) {
+			report.setSystemInfo("Base Browser", context.getSuite().getParameter("value"));
+		} else {
+			report.setSystemInfo("Base Browser", "Edge");
+		}
 		report.setSystemInfo("Base Environment", "Testing");
 		report.setSystemInfo("Base URL", "http://localhost:8888/");
 		report.setSystemInfo("Base Platform", "Windows - 11");

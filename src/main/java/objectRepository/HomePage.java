@@ -4,9 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-
-import com.github.dockerjava.api.model.Driver;
 
 import genericUtilities.WebDriverUtility;
 
@@ -152,6 +149,14 @@ public class HomePage extends WebDriverUtility {
 	}
 
 	/**
+	 * This method will click on Opportunities link
+	 * 
+	 */
+	public void clickOnOpportunitiesLnk() {
+		OpportunitiesLnk.click();
+	}
+
+	/**
 	 * This method will click on Products link
 	 * 
 	 **/
@@ -168,6 +173,7 @@ public class HomePage extends WebDriverUtility {
 	}
 
 	public void clickOnCampaignLnk(WebDriver driver) {
+		moreLnk.click();
 		waitForElementToBeVisisble(driver, campaignLnk);
 		campaignLnk.click();
 	}
@@ -187,7 +193,15 @@ public class HomePage extends WebDriverUtility {
 	public void logOutOfApp(WebDriver driver) {
 		mouseHoverAction(driver, AdministratorImg);
 		waitForElementToBeVisisble(driver, SignOutLnk);
-		SignOutLnk.click();
-	}
 
+		Boolean actualElement = true;
+		while (actualElement) {
+			try {
+				SignOutLnk.click();
+				actualElement = false;
+			} catch (Exception e) {
+				actualElement = true;
+			}
+		}
+	}
 }
