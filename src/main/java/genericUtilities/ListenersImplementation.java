@@ -6,7 +6,6 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -45,9 +44,8 @@ public class ListenersImplementation implements ITestListener {
 
 		String methodName = result.getMethod().getMethodName();
 		Log.info(methodName + " ---- Test Execution successfull ----");
-		
-		
-		test.log(Status.PASS, methodName + result.getTestName() + " -> PASS"+Thread.currentThread().getId());
+
+		test.log(Status.PASS, methodName + result.getTestName() + " -> PASS" + Thread.currentThread().getId());
 		test.log(Status.INFO, methodName + result.getTestName() + " -> PASS (Status.INFO, details)");
 
 		/*
