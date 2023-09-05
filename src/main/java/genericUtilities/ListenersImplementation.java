@@ -47,7 +47,7 @@ public class ListenersImplementation implements ITestListener {
 		Log.info(methodName + " ---- Test Execution successfull ----");
 		
 		
-		test.log(Status.PASS, methodName + result.getTestName() + " -> PASS"+Thread.currentThread().getId();
+		test.log(Status.PASS, methodName + result.getTestName() + " -> PASS"+Thread.currentThread().getId());
 		test.log(Status.INFO, methodName + result.getTestName() + " -> PASS (Status.INFO, details)");
 
 		/*
