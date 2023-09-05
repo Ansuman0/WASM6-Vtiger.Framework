@@ -30,10 +30,10 @@ public class OpportunityPage extends WebDriverUtility {
 	 * This will open another windows where we can open Organization
 	 */
 	@FindBy(name = "search_text")
-	private WebElement OrgSearchEdt;
+	private WebElement OrgSearchEdt;// common elements so used same button
 
 	@FindBy(name = "search")
-	private WebElement OrgSearchBtn;
+	private WebElement OrgSearchBtn;// common elements so used same button
 
 	@FindBy(xpath = "//select[@name='opportunity_type']")
 	private WebElement OpportunityTypeDrp;
@@ -95,6 +95,10 @@ public class OpportunityPage extends WebDriverUtility {
 		return OrgSearchEdt;
 	}
 
+	public WebElement getOrgSearchBtn() {
+		return OrgSearchBtn;
+	}
+
 	public WebElement getOpportunityTypeDrp() {
 		return OpportunityTypeDrp;
 	}
@@ -153,7 +157,7 @@ public class OpportunityPage extends WebDriverUtility {
 	}
 
 	public void createOpportunityFullDetails(WebDriver driver, String opportunityName, String ORGNAME,
-			String CampaignsName, String description, String closeDate) {
+			String CampaignsName, String description, String closeDate) throws Exception {
 
 		getOpportunityNameEdt().sendKeys(opportunityName);
 
@@ -165,8 +169,10 @@ public class OpportunityPage extends WebDriverUtility {
 		handleDropDown(getRelatedToDrp(), "Accounts");// Organizations
 		getRelatedToDrpValueLookUpImg().click();
 		switchToWindow(driver, "Accounts");
-		OrgSearchEdt.sendKeys(ORGNAME);
+		OrgSearchEdt.sendKeys(ORGNAME);// common elements so used same button
+		OrgSearchBtn.click();// common elements so used same button
 		driver.findElement(By.xpath("//a[.='" + ORGNAME + "']")).click();
+
 		switchToWindow(driver, "Potentials");// opportunity page.
 
 		/*
@@ -184,7 +190,8 @@ public class OpportunityPage extends WebDriverUtility {
 		handleDropDown(getLeadSourceDrp(), "Cold Call");
 		getCampaignSourceLookUpImg().click();
 		switchToWindow(driver, "Campaigns");// campaigns
-		OrgSearchEdt.sendKeys(CampaignsName);
+		OrgSearchEdt.sendKeys(CampaignsName);// common elements so used same button
+		OrgSearchBtn.click(); // common elements so used same button
 		driver.findElement(By.xpath("//a[.='" + CampaignsName + "']")).click();
 		switchToWindow(driver, "Potentials");// opportunity page.
 
@@ -198,7 +205,6 @@ public class OpportunityPage extends WebDriverUtility {
 
 		// handleDropDown(getSalesStageDrp(), "Prospecting"); //If Required enable.
 
-		getDescriptionEdt().sendKeys(description);
 		getSaveBtn().click();
 
 	}

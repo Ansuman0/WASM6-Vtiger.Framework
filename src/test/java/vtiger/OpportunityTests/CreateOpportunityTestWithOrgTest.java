@@ -51,7 +51,6 @@ public class CreateOpportunityTestWithOrgTest extends BaseClass {
 		Reporter.log("Creating Organization Name & Given Name is Same");
 
 		// Step 4:Navigate to Campaignlink and Create Campaign
-		Thread.sleep(2000);
 		hp.clickOnCampaignLnk(driver);
 		Reporter.log("Navigate to Campaign Link & Click on Campaign.");
 
@@ -66,7 +65,6 @@ public class CreateOpportunityTestWithOrgTest extends BaseClass {
 		Reporter.log("Creating Campainging Name & Given Name is Same");
 
 		// Step 5: Navigate to Opportunity link and Create Opportuntity
-		Thread.sleep(2000);
 		hp.clickOnOpportunitiesLnk();
 		Reporter.log("Navigate to Opportunities Link & Click on Opportunities.");
 

@@ -6,6 +6,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -44,9 +45,10 @@ public class ListenersImplementation implements ITestListener {
 
 		String methodName = result.getMethod().getMethodName();
 		Log.info(methodName + " ---- Test Execution successfull ----");
-
-		test.log(Status.PASS, methodName + result.getTestName() + " -> PASS");
-		test.log(Status.INFO, methodName + result.getTestName() + " -> PASS");
+		
+		
+		test.log(Status.PASS, methodName + result.getTestName() + " -> PASS"+Thread.currentThread().getId();
+		test.log(Status.INFO, methodName + result.getTestName() + " -> PASS (Status.INFO, details)");
 
 		/*
 		 * // Take - Screenshot String screenShotName = methodName + "-" + new
@@ -136,12 +138,14 @@ public class ListenersImplementation implements ITestListener {
 		report.attachReporter(htmlReport);
 		if ((context.getSuite().getParameter("value")) != null) {
 			report.setSystemInfo("Base Browser", context.getSuite().getParameter("value"));
+			report.setSystemInfo("Base Platform", context.getSuite().getParameter("value"));
 		} else {
 			report.setSystemInfo("Base Browser", "Edge");
+			report.setSystemInfo("Base Platform", "Windows - 11");
 		}
 		report.setSystemInfo("Base Environment", "Testing");
 		report.setSystemInfo("Base URL", "http://localhost:8888/");
-		report.setSystemInfo("Base Platform", "Windows - 11");
+		// report.setSystemInfo("Base Platform", "Windows - 11");
 		report.setSystemInfo("Reporter Name", "Ansuman");
 
 	}
