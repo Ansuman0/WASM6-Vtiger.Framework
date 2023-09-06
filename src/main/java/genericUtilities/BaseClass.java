@@ -44,9 +44,6 @@ public class BaseClass {
 
 	public static WebDriver sDriver;
 
-	ExtentReports report;
-	ExtentTest test;
-
 	@BeforeSuite(groups = { "SmokeSuite", "RegressionSuite" })
 	public void bsConfig() {
 		System.out.println("====== DB Connection SuccessFull ======");
