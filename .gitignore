@@ -38,9 +38,9 @@ deploycmd.txt
 
 # Intellij
 .idea/
-.classpath
-.project
-.settings/
+.classpath/
+.project/
+.settings
 
 # 
 pom.nexus.xml
