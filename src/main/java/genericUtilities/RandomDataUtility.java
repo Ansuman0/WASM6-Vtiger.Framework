@@ -106,4 +106,12 @@ public class RandomDataUtility {
 		String description = faker.lorem().sentence();
 		return description;
 	}
+
+	public String generateRandomAmount() {
+		Faker faker = new Faker();
+		// Generate a random amount (e.g., for currency)
+		double amount = faker.number().randomDouble(2, 10, 1000);
+		String str = Double.toString(amount);
+		return str;
+	}
 }
