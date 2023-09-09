@@ -172,7 +172,6 @@ public class OpportunityPage extends WebDriverUtility {
 		OrgSearchEdt.sendKeys(ORGNAME);// common elements so used same button
 		OrgSearchBtn.click();// common elements so used same button
 		driver.findElement(By.xpath("//a[.='" + ORGNAME + "']")).click();
-
 		switchToWindow(driver, "Potentials");// opportunity page.
 
 		/*

@@ -1,5 +1,6 @@
 package objectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,15 @@ public class ProductPage extends WebDriverUtility {
 
 	@FindBy(name = "productcategory")
 	private WebElement ProductCategoryDrp;
+
+	@FindBy(xpath = "//*[contains(@title,'Select')]")
+	private WebElement VendorLookUpImg;
+
+	@FindBy(name = "search_text")
+	private WebElement VendorSearchEdt;// common elements so used same button
+
+	@FindBy(name = "search")
+	private WebElement VendorSearchBtn;// common elements so used same button
 
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
 	private WebElement SaveBtn;
@@ -61,6 +71,18 @@ public class ProductPage extends WebDriverUtility {
 		return ProductCategoryDrp;
 	}
 
+	public WebElement getVendorLookUpImg(){
+		return VendorLookUpImg;
+	}
+	public WebElement getOrgSearchEdt() {
+		return VendorSearchEdt;
+	}
+
+	public WebElement getOrgSearchBtn() {
+		return VendorSearchBtn;
+	}
+
+
 	public WebElement getSaveBtn() {
 		return SaveBtn;
 	}
@@ -92,6 +114,20 @@ public class ProductPage extends WebDriverUtility {
 		getProductNameEdt().sendKeys(productName);
 		getProductDateEdt().sendKeys(produtStartDate);
 		handleDropDown(getProductCategoryDrp(), productCategory);
+		getSaveBtn().click();
+	}
+
+	public void createProductWithVendor(WebDriver driver, String productName, String produtStartDate, String productCategory,String vendorName) {
+
+		getProductNameEdt().sendKeys(productName);
+		getProductDateEdt().sendKeys(produtStartDate);
+		handleDropDown(getProductCategoryDrp(), productCategory);
+		switchToWindow(driver, "Vendors");
+		VendorSearchEdt.sendKeys(vendorName);// common elements so used same button
+		VendorSearchBtn.click();// common elements so used same button
+		driver.findElement(By.xpath("//a[.='" + vendorName + "']")).click();
+		switchToWindow(driver, "Products");// opportunity page.
+
 		getSaveBtn().click();
 	}
 	/**
