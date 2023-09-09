@@ -157,7 +157,7 @@ public class OpportunityPage extends WebDriverUtility {
 	}
 
 	public void createOpportunityFullDetails(WebDriver driver, String opportunityName, String ORGNAME,
-			String CampaignsName, String description, String closeDate, String Amount,String SourceDrp,String Organizations) throws Exception {
+			String CampaignsName, String description, String closeDate) throws Exception {
 
 		getOpportunityNameEdt().sendKeys(opportunityName);
 
@@ -166,13 +166,12 @@ public class OpportunityPage extends WebDriverUtility {
 		 * Based on the related Dropdown value we are selecting this . This will switch
 		 * windows and move Organization window and select Created Org.
 		 */
-		handleDropDown(getRelatedToDrp(), Organizations);// Organizations
+		handleDropDown(getRelatedToDrp(), "Accounts");// Organizations
 		getRelatedToDrpValueLookUpImg().click();
 		switchToWindow(driver, "Accounts");
 		OrgSearchEdt.sendKeys(ORGNAME);// common elements so used same button
 		OrgSearchBtn.click();// common elements so used same button
 		driver.findElement(By.xpath("//a[.='" + ORGNAME + "']")).click();
-
 		switchToWindow(driver, "Potentials");// opportunity page.
 
 		/*
@@ -187,7 +186,7 @@ public class OpportunityPage extends WebDriverUtility {
 		 * windows and move Campaingn window and select Created Org. Base on the Created
 		 * Camapign we passing this value.
 		 */
-		handleDropDown(getLeadSourceDrp(), SourceDrp);
+		handleDropDown(getLeadSourceDrp(), "Cold Call");
 		getCampaignSourceLookUpImg().click();
 		switchToWindow(driver, "Campaigns");// campaigns
 		OrgSearchEdt.sendKeys(CampaignsName);// common elements so used same button
@@ -195,7 +194,7 @@ public class OpportunityPage extends WebDriverUtility {
 		driver.findElement(By.xpath("//a[.='" + CampaignsName + "']")).click();
 		switchToWindow(driver, "Potentials");// opportunity page.
 
-		getAmount().sendKeys(Amount);
+		getAmount().sendKeys("");
 		getExpectedCloseDate().clear();
 		getExpectedCloseDate().sendKeys(closeDate);
 
