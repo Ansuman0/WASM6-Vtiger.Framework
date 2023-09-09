@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import genericUtilities.WebDriverUtility;
 
 public class CampaigingPage extends WebDriverUtility {
-
+	WebDriver driver;
 	@FindBy(css = "[alt='Create Campaign...']")
 	private WebElement createCampaigingLookUpImg;
 
@@ -33,6 +33,7 @@ public class CampaigingPage extends WebDriverUtility {
 	// initialization
 
 	public CampaigingPage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 

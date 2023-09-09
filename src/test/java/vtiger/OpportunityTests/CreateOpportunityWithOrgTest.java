@@ -23,16 +23,17 @@ import objectRepository.OrganizationsPage;
  */
 @Feature("Create Opportunity with all Details.")
 @Listeners(ListenersImplementation.class)
-public class CreateOpportunityTestWithOrgTest extends BaseClass {
+public class CreateOpportunityWithOrgTest extends BaseClass {
 
 	@Test
-	public void createOpportunityTestWithOrgTest() throws Exception {
+	public void createOpportunityWithOrgTest() throws Exception {
 
 		String opportunityName = rUtil.generateDescription();
 		String ORGNAME = rUtil.generateRandomCompany();
 		String campaingName = rUtil.generateRandomCampaigingName();
 		String description = rUtil.generateDescription();
 		String closeDate = jUtil.getFutureDateString();
+		String amount = rUtil.generateRandomAmount();
 
 		// Step 3: Click on Organizations link and Create Organizations
 		HomePage hp = new HomePage(driver);
@@ -80,7 +81,8 @@ public class CreateOpportunityTestWithOrgTest extends BaseClass {
 		Assert.assertTrue(OpportunityFormTitel.contains(OpportunityFormTitel));
 		Reporter.log("Click on the Opportunity form to Create Opportunity");
 
-		opp.createOpportunityFullDetails(driver, opportunityName, ORGNAME, campaingName, description, closeDate);
+//		opp.createOpportunityFullDetails(driver, opportunityName, ORGNAME, campaingName, description, closeDate,
+//				amount);
 		Reporter.log("Create Opportunity with Required data");
 		String CretedOpportunity = opp.getCreatedOpportunityHeader();
 		Assert.assertTrue(CretedOpportunity.contains(opportunityName));

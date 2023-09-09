@@ -332,7 +332,7 @@ public class WebDriverUtility {
 	}
 
 	/**
-	 * This method will press the enter key by usring robort Class
+	 * This method will press the enter key by using robort Class
 	 * 
 	 * @throws AWTException
 	 */
