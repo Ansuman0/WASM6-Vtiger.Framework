@@ -11,7 +11,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import objectRepository.ContactsInfoPage;
 import objectRepository.ContactsPage;
-import objectRepository.CreateNewContactPage;
+import objectRepository.ContactsPage;
 import objectRepository.HomePage;
 
 /**
@@ -24,38 +24,35 @@ import objectRepository.HomePage;
 @Feature("Create Contat Page TestCases")
 @Listeners(ListenersImplementation.class)
 public class CreateContact extends BaseClass {
-	
-	
+
 	@Parameters("browser")
 	@Test(groups = "SmokeSuite")
 	public void createContactTest() throws Exception {
-		
 
 		// Step 3: read all the required data
-		String LASTNAME = jUtil.generateRandomFirstName() +" "+ jUtil.generateRandomLastName();
-		
+		String firstName = rUtil.generateRandomFirstName();
+		String LASTNAME = rUtil.generateRandomLastName();
 
 		// Step 4: Navigate to Contacts Link
 		HomePage hp = new HomePage(driver);
 		hp.clickOnContactsLink();
-		
 
 		// Step 5: Navigate to create Contact Look up image
-		ContactsPage  cp = new ContactsPage(driver);
+		ContactsPage cp = new ContactsPage(driver);
 		cp.clickOnContactsLookUpImage();
 
 		// Step 6: create contact with mandatory details and save
-		CreateNewContactPage ccp = new CreateNewContactPage(driver);
-		ccp.createNewContact(LASTNAME);
-		System.out.println("Name : "+LASTNAME);
+		ContactsPage ccp = new ContactsPage(driver);
+		ccp.createContact(driver, firstName, LASTNAME);;
+		System.out.println("Name : " + LASTNAME);
 
 		// Step 7: Validate
 		ContactsInfoPage cip = new ContactsInfoPage(driver);
 		String contactHeader = cip.getContactHeader();
 		System.out.println(contactHeader);
 		Assert.assertTrue(contactHeader.contains(LASTNAME));
-		System.out.println("Contact Header Matched : "+LASTNAME);
-		//wUtil.takeScreenShot(driver, contactHeader);
+		System.out.println("Contact Header Matched : " + LASTNAME);
+		// wUtil.takeScreenShot(driver, contactHeader);
 
 	}
 }
