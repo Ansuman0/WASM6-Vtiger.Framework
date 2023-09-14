@@ -27,7 +27,7 @@ public class ListenersImplementation implements ITestListener {
 
 	private static final Logger Log = Logger.getLogger(ListenersImplementation.class.getName());
 
-	@Parameters({ "OS", "browser" })
+	// @Parameters({ "OS", "browser" })
 	public void onTestStart(ITestResult result) {
 
 		// run for every @Test start
@@ -45,8 +45,8 @@ public class ListenersImplementation implements ITestListener {
 		String methodName = result.getMethod().getMethodName();
 		Log.info(methodName + " ---- Test Execution successfull ----");
 
-		test.log(Status.PASS, methodName + result.getTestName() + " -> PASS");
-		test.log(Status.INFO, methodName + result.getTestName() + " -> PASS");
+		test.log(Status.PASS, methodName + result.getTestName() + " -> PASS" + Thread.currentThread().getId());
+		test.log(Status.INFO, methodName + result.getTestName() + " -> PASS (Status.INFO, details)");
 
 		/*
 		 * // Take - Screenshot String screenShotName = methodName + "-" + new
@@ -115,7 +115,7 @@ public class ListenersImplementation implements ITestListener {
 
 	}
 
-	// @Parameters({ "OS", "browser" })
+	@Parameters({ "OS", "browser" })
 	public void onStart(ITestContext context) {
 
 		Reporter.log("Execution of suite started", true);
@@ -134,10 +134,16 @@ public class ListenersImplementation implements ITestListener {
 
 		report = new ExtentReports();
 		report.attachReporter(htmlReport);
-		report.setSystemInfo("Base Browser", context.getSuite().getParameter("value"));
+		if ((context.getSuite().getParameter("value")) != null) {
+			report.setSystemInfo("Base Browser", context.getSuite().getParameter("value"));
+			report.setSystemInfo("Base Platform", context.getSuite().getParameter("value"));
+		} else {
+			report.setSystemInfo("Base Browser", "Edge");
+			report.setSystemInfo("Base Platform", "Windows - 11");
+		}
 		report.setSystemInfo("Base Environment", "Testing");
 		report.setSystemInfo("Base URL", "http://localhost:8888/");
-		report.setSystemInfo("Base Platform", "Windows - 11");
+		// report.setSystemInfo("Base Platform", "Windows - 11");
 		report.setSystemInfo("Reporter Name", "Ansuman");
 
 	}

@@ -38,6 +38,9 @@ deploycmd.txt
 
 # Intellij
 .idea/
+.classpath/
+.project/
+.settings
 
 # 
 pom.nexus.xml
@@ -51,3 +54,6 @@ ExtentReports
 
 #ScreenShots
 ScreenShots
+
+#Jsonfile
+Config.Json
