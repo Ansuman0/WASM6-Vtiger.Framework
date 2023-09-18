@@ -5,7 +5,7 @@
 
 	<listeners>
 		<listener
-			class-name="genericUtilities.ListenersImplementation"></listener>
+			class-name="genericUtilities.ListenersImplementation"/>
 	</listeners>
 
 	<test thread-count="5" name="Test">
@@ -13,20 +13,20 @@
 
 
 		<classes>
-			<class name="vtiger.ContactsTests.CreateContact"></class>
+			<class name="vtiger.ContactsTests.CreateContact"/>
 			<class
-				name="vtiger.ContactsTests.CreateContactWithOrganizationTest"></class>
+				name="vtiger.ContactsTests.CreateContactWithOrganizationTest"/>
 			<class
-				name="vtiger.OrganizationsTests.CreateMultipleOrganizationWithIndTest"></class>
-			<class name="vtiger.LeadTests.CreateLead"></class>
+				name="vtiger.OrganizationsTests.CreateMultipleOrganizationWithIndTest"/>
+			<class name="vtiger.LeadTests.CreateLead"/>
 			<class
-				name="vtiger.OrganizationsTests.CreateMultipleOrganizationWithIndTest"></class>
+				name="vtiger.OrganizationsTests.CreateMultipleOrganizationWithIndTest"/>
 			<class
-				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"/>
 			<class
-				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"/>
 			<class
-				name="vtiger.OpportunityTests.CreateOpportunityTestWithOrgTest"></class>
+				name="vtiger.OpportunityTests.CreateOpportunityTestWithOrgTest"/>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
