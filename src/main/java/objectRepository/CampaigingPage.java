@@ -27,7 +27,7 @@ public class CampaigingPage extends WebDriverUtility {
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
 	private WebElement SaveBtn;
 
-	@FindBy(xpath = "//span[@class='lvtHeaderText']")
+	@FindBy(xpath = "//span[@class='dvHeaderText']")
 	private WebElement CreatedCampaignHeaderTitel;
 
 	// initialization
@@ -69,7 +69,7 @@ public class CampaigingPage extends WebDriverUtility {
 	// Business Library
 
 	/**
-	 * This method will click on Create Product look up image
+	 * This method will click on Create Campaiging look up image
 	 */
 	public void clickOnCampaigingLookUpImage() {
 		getCreateCampaigingLookUpImg().click();
@@ -90,7 +90,16 @@ public class CampaigingPage extends WebDriverUtility {
 		getExpectedCloseDate().clear();
 		getExpectedCloseDate().sendKeys(closeDate);
 		getSaveBtn().click();
-		
+
+	}
+
+	public void createNewCampaiging(WebDriver driver, String campaingName, String closeDate) {
+		getCampaignNameEdt().sendKeys(campaingName);
+		// handleDropDown(getCampaigntypeDrp(), campaignType);
+		getExpectedCloseDate().clear();
+		getExpectedCloseDate().sendKeys(closeDate);
+		getSaveBtn().click();
+
 	}
 
 	/**
