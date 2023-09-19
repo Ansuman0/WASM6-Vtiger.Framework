@@ -1,6 +1,6 @@
 package objectRepository;
 
-import org.apache.poi.util.SystemOutLogger;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
 
 import genericUtilities.ListenersImplementation;
 import io.qameta.allure.Description;
