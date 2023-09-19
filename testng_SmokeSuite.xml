@@ -3,13 +3,13 @@
 <suite name="Suite">
 	<groups>
 		<run>
-			<include name="SmokeSuite"></include>
+			<include name="SmokeSuite"/>
 		</run>
 	</groups>
 
 	<listeners>
 		<listener
-			class-name="genericUtilities.ListenersImplementation"></listener>
+			class-name="genericUtilities.ListenersImplementation"/>
 	</listeners>
 
 	<test thread-count="5" name="Test">

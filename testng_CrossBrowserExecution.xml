@@ -6,7 +6,7 @@
 		<parameter name="browser" value="Chrome" />
 		<classes>
 			<class
-				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"/>
 				
 		</classes>
 	</test>
@@ -15,7 +15,7 @@
 		<parameter name="browser" value="Edge" />
 		<classes>
 			<class
-				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"/>
 		</classes>
 	</test> <!-- Test -->
 
@@ -23,7 +23,7 @@
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class
-				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"></class>
+				name="vtiger.OrganizationsTests.CreateOrgWithIndustryTest"/>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
