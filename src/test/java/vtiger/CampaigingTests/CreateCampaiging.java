@@ -1,12 +1,7 @@
 package vtiger.CampaigingTests;
 
-import java.io.IOException;
-
-import org.apache.poi.EncryptedDocumentException;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
@@ -22,13 +17,12 @@ import objectRepository.HomePage;
  * @author Ansuman
  *
  */
-@Feature("Create Multiple Campaiging with Campaiging Type")
+@Feature("Create  Campaiging without Campaiging Type")
 @Listeners(ListenersImplementation.class)
-public class CreateMultipleCampaiging extends BaseClass {
+public class CreateCampaiging extends BaseClass {
 
-	@Parameters("browser")
-	@Test(dataProvider = "getData", groups = "RegressionSuite")
-	public void createCampaigingTest(String campaignType) {
+	@Test
+	public void createCampaigingTest() {
 
 		String campaingName = rUtil.generateRandomCampaigingName();
 		String closeDate = jUtil.getFutureDateString();
@@ -48,16 +42,10 @@ public class CreateMultipleCampaiging extends BaseClass {
 		String capaiginFormTitle = cp.getCampaigingFormHeader();
 		Assert.assertTrue(capaiginFormTitle.contains(capaiginFormTitle));
 
-		cp.createCampaiging(driver, campaingName, campaignType, closeDate);
-
+		cp.createNewCampaiging(driver, campaingName, closeDate);
 		String createdCapaiginTitel = cp.getCreatedCampaignHeader();
 		Assert.assertTrue(createdCapaiginTitel.contains(createdCapaiginTitel));
 
-	}
-
-	@DataProvider
-	public Object[][] getData() throws EncryptedDocumentException, IOException {
-		return eUtil.readMultipleData("DatProviderCampaiging");
 	}
 
 }
