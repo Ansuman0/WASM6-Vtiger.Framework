@@ -37,14 +37,12 @@ public class BaseClass {
 	public WebDriverUtility wUtil = new WebDriverUtility();
 	public ExcelFileUtility eUtil = new ExcelFileUtility();
 	public JavaUtility jUtil = new JavaUtility();
+	public RandomDataUtility rUtil = new RandomDataUtility();
 	public ListenersImplementation lmpUtil = new ListenersImplementation();
 
 	public WebDriver driver = null;
 
 	public static WebDriver sDriver;
-
-	ExtentReports report;
-	ExtentTest test;
 
 	@BeforeSuite(groups = { "SmokeSuite", "RegressionSuite" })
 	public void bsConfig() {
@@ -55,17 +53,14 @@ public class BaseClass {
 	@BeforeClass(alwaysRun = true)
 	@Parameters({ "browser" })
 	public void bcConfig(@Optional("browser") String BROWSER, ITestContext context) throws IOException {
-		
+
 		/*
 		 * This will read data for Log4j Releaded data .
 		 */
 		pUtil.readLogoDataFromPropertyFile();
-		
-		
+
 		BROWSER = pUtil.readDataFromPrpertyFile("browser");
 		String URL = pUtil.readDataFromPrpertyFile("url");
-		
-		
 
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
