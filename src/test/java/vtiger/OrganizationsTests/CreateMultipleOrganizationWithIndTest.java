@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import genericUtilities.BaseClass;
 import genericUtilities.ListenersImplementation;
 import io.qameta.allure.Feature;
+import objectRepository.CreateNewOrganizationPage;
 import objectRepository.HomePage;
 import objectRepository.OrganizationInfoPage;
 import objectRepository.OrganizationsPage;
@@ -24,17 +25,16 @@ import objectRepository.OrganizationsPage;
  */
 @Feature("Create Multiple Organization With Industry Test")
 @Listeners(ListenersImplementation.class)
-public class CreateMultipleOrganizationWithIndTest extends BaseClass {
+public class CreateMultipleOrganizationWithIndTest extends BaseClass{
+	
 
-	@Test(dataProvider = "getData", groups = "RegressionSuite")
-	public void createOrgTEst(/* String ORG, */ String INDUSTRY) throws IOException {
+	@Test(dataProvider = "getData",groups="RegressionSuite")
+	public void createOrgTEst(String ORG, String INDUSTRY) throws IOException {
 
-		/*
-		 * ORG is commed out .which will read data from execl.
-		 */
-		String ORGNAME = /* ORG+ */rUtil.generateRandomCompany();
-
+		String ORGNAME = ORG+jUtil.generateRandomCompany();
+		
 //		WebDriver driver = null;
+
 
 		// Step 3: Click on Organizations link
 		HomePage hp = new HomePage(driver);
@@ -45,19 +45,20 @@ public class CreateMultipleOrganizationWithIndTest extends BaseClass {
 		op.clickOnCreateOrgLookUpImg();
 
 		// Step 5: Create Organization with mandatory fields
-		OrganizationsPage cnop = new OrganizationsPage(driver);
-		cnop.createOrganizationWithInd(ORGNAME, INDUSTRY);
+		CreateNewOrganizationPage cnop = new CreateNewOrganizationPage(driver);
+		cnop.createNewOrganization(ORGNAME, INDUSTRY);
 
 		// Step 8: Validate
 		OrganizationInfoPage oip = new OrganizationInfoPage(driver);
 		String orgHeader = oip.getHeader();
-		Assert.assertTrue(orgHeader.contains(ORGNAME));
+        Assert.assertTrue(orgHeader.contains(ORGNAME));
+		
 
 	}
 
 	@DataProvider
 	public Object[][] getData() throws EncryptedDocumentException, IOException {
-		return eUtil.readMultipleData("DataProviderIndustryType");
+		return eUtil.readMultipleData("DatProviderOrg");
 	}
 
 }

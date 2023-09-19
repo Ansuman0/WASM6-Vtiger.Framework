@@ -5,6 +5,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
+import net.datafaker.Faker;
+
 /**
  * This class consists of generic methods related to java
  * 
@@ -24,6 +26,54 @@ public class JavaUtility {
 	}
 
 	/**
+	 * This method genrate fake data by using Datafacker class.
+	 * 
+	 * @return
+	 */
+
+	public String generateRandomFirstName() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.name().firstName();
+	}
+
+	public String generateRandomLastName() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.name().firstName();
+	}
+
+	public String generateRandomCompany() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.company().name();
+	}
+
+	public String generateRandomIndusty() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.company().industry();
+	}
+
+	public String generateRandomProduct() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.commerce().productName();
+	}
+
+	public String generateRandomCampaigingName() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		// To generate a valid random first name
+		return faker.company().buzzword() + " Campaign";
+	}
+
+	/**
 	 * This method will get system date
 	 * 
 	 * @return
@@ -38,8 +88,7 @@ public class JavaUtility {
 	 * 
 	 * @return
 	 */
-	public String getSystemDateInFormat() {
-
+	public String getSystemInFormat() {
 		Date d = new Date();
 		String[] dArr = d.toString().split(" ");
 		String date = dArr[2];
@@ -62,7 +111,7 @@ public class JavaUtility {
 		return date;
 	}
 
-	public String getFutureDateString() {
+	public static  String getFutureDateString() {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.DAY_OF_YEAR, 2);
 		Date futureDateTime = calendar.getTime();

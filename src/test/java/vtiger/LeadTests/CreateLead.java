@@ -28,9 +28,9 @@ public class CreateLead extends BaseClass {
 	public void createLeadTest() throws Exception {
 
 		// Step 3: read all the required data
-		String firstName = rUtil.generateRandomFirstName();
-		String lastName = rUtil.generateRandomLastName();
-		String company = rUtil.generateRandomCompany();
+		String firstName = jUtil.generateRandomFirstName();
+		String lastName = jUtil.generateRandomLastName();
+		String company = jUtil.generateRandomCompany();
 
 		// Step 4: Navigate to Leads Link
 		HomePage hp = new HomePage(driver);

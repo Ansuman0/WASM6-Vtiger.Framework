@@ -10,6 +10,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
+import genericUtilities.JavaUtility;
 import genericUtilities.ListenersImplementation;
 import io.qameta.allure.Feature;
 import objectRepository.CampaigingPage;
@@ -30,15 +31,16 @@ public class CreateMultipleCampaiging extends BaseClass {
 	@Test(dataProvider = "getData", groups = "RegressionSuite")
 	public void createCampaigingTest(String campaignType) {
 
-		String campaingName = rUtil.generateRandomCampaigingName();
-		String closeDate = jUtil.getFutureDateString();
-		System.out.println("Date :" + closeDate);
+		String campaingName = jUtil.generateRandomCampaigingName();
+		String closeDate = JavaUtility.getFutureDateString();
+		System.out.println("Date :"+closeDate);
 
 		HomePage hp = new HomePage(driver);
 		hp.clickOnMoreLink();
-		hp.clickOnCampaignLnk(driver);
+		hp.clickOnCampaignBtn(driver);
 
 		CampaigingPageInfo cpi = new CampaigingPageInfo(driver);
+
 		String campaigingPageHeader = cpi.getCreatedCampaignHeader();
 		Assert.assertTrue(campaigingPageHeader.contains(campaigingPageHeader));
 

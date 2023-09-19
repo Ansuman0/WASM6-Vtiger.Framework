@@ -32,7 +32,7 @@ public class CreateMultipleProduct extends BaseClass {
 	@Test(dataProvider = "getData",groups="RegressionSuite")
 	public void createProductTest(String productCategory) {
 
-		String prodcutName = rUtil.generateRandomProduct();
+		String prodcutName = jUtil.generateRandomProduct();
 		String ProductDate = jUtil.getsimpleDateFormat();
 		
 		HomePage hp = new HomePage(driver);
