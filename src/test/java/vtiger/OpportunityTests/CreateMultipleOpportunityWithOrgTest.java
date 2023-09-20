@@ -100,10 +100,10 @@ public class CreateMultipleOpportunityWithOrgTest extends BaseClass {
 		return eUtil.readMultipleData("LeadSource");
 	}
 
-	@DataProvider
-	public Object[][] combineData() throws EncryptedDocumentException, IOException {
-		return Stream.of(getRelatedTypeData(), getLeadSourceData()).flatMap(Arrays::stream).toArray(Object[][]::new);
-
-	}
+//	@DataProvider
+//	public Object[][] combineData() throws EncryptedDocumentException, IOException {
+//		return Stream.of(getRelatedTypeData(), getLeadSourceData()).flatMap(Arrays::stream).toArray(Object[][]::new);
+//
+//	}
 
 }
