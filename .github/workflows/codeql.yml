@@ -109,6 +109,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # we've added a step to check if the SARIF file exists, and if not, it creates an empty SARIF file
+      - name: Check if SARIF file exists
+        run: 'test -f "results.sarif" || touch "results.sarif"'
+
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
