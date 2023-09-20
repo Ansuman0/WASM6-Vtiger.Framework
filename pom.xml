@@ -14,7 +14,7 @@
 		<poi.version>5.2.3</poi.version>
 		<poi-ooxml.version>5.2.3</poi-ooxml.version>
 		<common-io.version>2.13.0</common-io.version>
-		<testng.version>7.8.0</testng.version>
+		<testng.version>7.7.1</testng.version>
 		<extentreports.version>5.1.0</extentreports.version>
 		<lombok.version>1.18.28</lombok.version>
 		<allure-testng.version>2.24.0</allure-testng.version>
@@ -68,8 +68,6 @@
 		</dependency>
 		<!--  This is TestNg Junit  -->
 		<!--  https://mvnrepository.com/artifact/org.testng/testng  -->
-		<!--  https://mvnrepository.com/artifact/org.testng/testng  -->
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>

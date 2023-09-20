@@ -45,7 +45,7 @@ public class VendorsPage extends WebDriverUtility {
 	/**
 	 * Description Name:
 	 */
-	@FindBy(xpath = "(//textarea[@class='detailedViewTextBox'])[2]")
+	@FindBy(xpath = "//*[contains(@name,'description')]")
 	private WebElement descriptionEdt;
 
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
