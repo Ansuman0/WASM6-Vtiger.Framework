@@ -27,6 +27,12 @@ public class RandomDataUtility {
 		Faker faker = new Faker();
 		return faker.name().lastName();
 	}
+	
+	public String generateRandomFullName() {
+		// Create an object of Faker class with default locale i.e ENG
+		Faker faker = new Faker();
+		return faker.name().name();
+	}
 
 	public String generateRandomCompany() {
 		// Create an object of Faker class with default locale i.e ENG

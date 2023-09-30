@@ -1,11 +1,7 @@
 package vtiger.OpportunityTests;
 
-import java.io.IOException;
-
-import org.apache.poi.EncryptedDocumentException;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -13,46 +9,48 @@ import genericUtilities.BaseClass;
 import genericUtilities.ListenersImplementation;
 import io.qameta.allure.Feature;
 import objectRepository.CampaigingPage;
+import objectRepository.ContactsInfoPage;
+import objectRepository.ContactsPage;
 import objectRepository.HomePage;
 import objectRepository.OpportunityPage;
 import objectRepository.OpportunityPageInfo;
-import objectRepository.OrganizationInfoPage;
-import objectRepository.OrganizationsPage;
 
 /**
  * This class provides implementation to ITestListener Interface
- * 
  * @author Ansuman
- *
  */
-@Feature("Create Multiple Opportunity with Organzation all Details.")
+@Feature("Create Opportunity with Contact all details ")
 @Listeners(ListenersImplementation.class)
-public class CreateMultipleOpportunityWithOrgTest extends BaseClass {
+public class CreateOpportunityWithContactTest extends BaseClass {
 
-	@Test(dataProvider = "opportunity", groups = "RegressionSuite")
-	public void createOpportunityWithOrgTest(String sourceDrp) {
+	@Test
+	public void createOpportunityWithContactTest() {
 		String opportunityName = rUtil.generateDescription();
-		String ORGNAME = rUtil.generateRandomCompany();
 		String campaingName = rUtil.generateRandomCampaigingName();
 		String description = rUtil.generateDescription();
 		String closeDate = jUtil.getFutureDateString();
-		String amount = rUtil.generateRandomAmount();
+		String lastName = rUtil.generateRandomFullName();
 
-		// Step 3: Click on Organizations link and Create Organizations
+		// Step 3: Click on Contact Link & Create on Contact
 		HomePage hp = new HomePage(driver);
-		hp.clickOnOrganizationLink();
-		Reporter.log("Navigate to Organization Link & Click on Organization");
+		try {
+			hp.clickOnContactsLink();
+			Reporter.log("Navigate to Contact Link & Click on Contact");
+		} catch (Exception e) {
+			String s = e.getCause().getMessage().toString();
+			Reporter.log(s);
+		}
 
-		OrganizationsPage op = new OrganizationsPage(driver);
-		op.clickOnCreateOrgLookUpImg();
-		Reporter.log("Click on Create Organization image look up");
-		op.createOrganization(ORGNAME);
-		Reporter.log("Creating Organization with Required Data");
+		ContactsPage cop = new ContactsPage(driver);
+		cop.clickOnContactsLookUpImage();
+		Reporter.log("Click on Create Contact image look up");
+		cop.createNewContact(lastName);
+		Reporter.log("Creating Contact with Required Data");
 
-		OrganizationInfoPage oip = new OrganizationInfoPage(driver);
-		String orgHeader = oip.getHeader();
-		Assert.assertTrue(orgHeader.contains(ORGNAME));
-		Reporter.log("Creating Organization Name & Given Name is Same");
+		ContactsInfoPage cip = new ContactsInfoPage(driver);
+		String contactHeader = cip.getContactHeader();
+		Assert.assertTrue(contactHeader.contains(lastName));
+		Reporter.log("Created Contact & Given Contact is Same");
 
 		// Step 4:Navigate to Campaignlink and Create Campaign
 		hp.clickOnCampaignLnk(driver);
@@ -83,12 +81,11 @@ public class CreateMultipleOpportunityWithOrgTest extends BaseClass {
 		String OpportunityFormTitel = opp.getOpportunitiesPageHeader();
 		Assert.assertTrue(OpportunityFormTitel.contains(OpportunityFormTitel));
 		Reporter.log("Click on the Opportunity form to Create Opportunity");
-		
-		
+
 		try {
-			String relatedToDrp = "Accounts";
-			opp.createOpportunityWithDetails(driver, opportunityName, ORGNAME, campaingName, description, closeDate,
-					relatedToDrp, sourceDrp, amount);
+			String relatedToDrp = "Contacts";
+			opp.createOpportunityFullDetails(driver,opportunityName,  lastName,
+					campaingName,  description,  closeDate, relatedToDrp);
 			Reporter.log("Create Opportunity with Required data");
 			String CretedOpportunity = opp.getCreatedOpportunityHeader();
 			Assert.assertTrue(CretedOpportunity.contains(opportunityName));
@@ -98,11 +95,6 @@ public class CreateMultipleOpportunityWithOrgTest extends BaseClass {
 			e.getCause().getMessage();
 
 		}
-	}
-
-	@DataProvider(name = "opportunity")
-	public Object[][] getRelatedTypeData() throws EncryptedDocumentException, IOException {
-		return eUtil.readMultipleData("OpportunityWithOrg");
 	}
 
 }

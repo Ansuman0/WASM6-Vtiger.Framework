@@ -97,12 +97,12 @@ public class ContactsPage extends WebDriverUtility {
 	 * This method will create a new contact.
 	 * 
 	 * @param driver
-	 * @param firtname
+	 * @param first name
 	 * @param LASTNAME
 	 */
-	public void createContact(WebDriver driver, String firtname, String LASTNAME) {
+	public void createContact(WebDriver driver, String firstname, String LASTNAME) {
 		handleDropDown(firstNameDrp, "Mr.");
-		firstNameEdt.sendKeys(firtname);
+		firstNameEdt.sendKeys(firstname);
 		LastNameEdt.sendKeys(LASTNAME);
 		SaveBtn.click();
 	}
