@@ -3,7 +3,6 @@ package vtiger.OrganizationsTests;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -57,7 +56,7 @@ public class CreateMultipleOrganizationWithIndTest extends BaseClass {
 
 	@DataProvider
 	public Object[][] getData() throws EncryptedDocumentException, IOException {
-		return eUtil.readMultipleData("DataProviderIndustryType");
+		return eUtil.readMultipleData("IndustryType");
 	}
 
 }

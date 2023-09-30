@@ -156,26 +156,42 @@ public class OpportunityPage extends WebDriverUtility {
 		return getOpportunityHeaderText().getText();
 	}
 
-	public void createOpportunityFullDetails(WebDriver driver, String opportunityName, String ORGNAME,
-			String CampaignsName, String description, String closeDate) throws Exception {
+	public void createOpportunityFullDetails(WebDriver driver, String opportunityName, String commonValue,
+			String CampaignsName, String description, String closeDate, String relatedToDrp) throws Exception {
 
 		getOpportunityNameEdt().sendKeys(opportunityName);
+
+		handleDropDown(getRelatedToDrp(), relatedToDrp);// Organizations
+		if (relatedToDrp.contentEquals("Accounts")) {
+			getRelatedToDrpValueLookUpImg().click();
+			switchToWindow(driver, "Accounts");
+			OrgSearchEdt.sendKeys(commonValue);// common elements so used same button
+			OrgSearchBtn.click();// common elements so used same button
+			driver.findElement(By.xpath("//a[.='" + commonValue + "']")).click();
+			switchToWindow(driver, "Potentials");// opportunity page.
+		} else {
+			getRelatedToDrpValueLookUpImg().click();
+			switchToWindow(driver, "Contacts");
+			OrgSearchEdt.sendKeys(commonValue);// common elements so used same button
+			OrgSearchBtn.click();// common elements so used same button
+			// driver.findElement(By.xpath("//a[.='" + commonValue + "']")).click();
+			driver.findElement(By.xpath("//a[contains(., '" + commonValue + "')]")).click();
+			switchToWindow(driver, "Potentials");// opportunity page.
+		}
 
 		/*
 		 * I have Taken staic Value ,If require dynami value can use data Provider.
 		 * Based on the related Dropdown value we are selecting this . This will switch
 		 * windows and move Organization window and select Created Org.
-		 */
-		handleDropDown(getRelatedToDrp(), "Accounts");// Organizations
-		getRelatedToDrpValueLookUpImg().click();
-		switchToWindow(driver, "Accounts");
-		OrgSearchEdt.sendKeys(ORGNAME);// common elements so used same button
-		OrgSearchBtn.click();// common elements so used same button
-		driver.findElement(By.xpath("//a[.='" + ORGNAME + "']")).click();
-		switchToWindow(driver, "Potentials");// opportunity page.
-
-		/*
-		 * I have Taken staic Value ,If require dynami value can use data Provider.
+		 *
+		 * handleDropDown(getRelatedToDrp(), "Accounts");// Organizations
+		 * getRelatedToDrpValueLookUpImg().click(); switchToWindow(driver, "Accounts");
+		 * OrgSearchEdt.sendKeys(ORGNAME);// common elements so used same button
+		 * OrgSearchBtn.click();// common elements so used same button
+		 * driver.findElement(By.xpath("//a[.='" + ORGNAME + "']")).click();
+		 * switchToWindow(driver, "Potentials");// opportunity page.
+		 * 
+		 * /* I have Taken staic Value ,If require dynami value can use data Provider.
 		 */
 		handleDropDown(getOpportunityTypeDrp(), "Existing Business");
 
@@ -193,8 +209,87 @@ public class OpportunityPage extends WebDriverUtility {
 		OrgSearchBtn.click(); // common elements so used same button
 		driver.findElement(By.xpath("//a[.='" + CampaignsName + "']")).click();
 		switchToWindow(driver, "Potentials");// opportunity page.
+		getExpectedCloseDate().clear();
+		getExpectedCloseDate().sendKeys(closeDate);
 
-		getAmount().sendKeys("");
+		/*
+		 * I have Taken staic Value ,If require dynami value can use data Provider.
+		 */
+
+		// handleDropDown(getSalesStageDrp(), "Prospecting"); //If Required enable.
+
+		getSaveBtn().click();
+
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param opportunityName
+	 * @param ORGNAME
+	 * @param CampaignsName
+	 * @param description
+	 * @param closeDate
+	 * @throws Exception
+	 */
+	String commonValue = null;
+
+	public void createOpportunityWithDetails(WebDriver driver, String opportunityName, String commonValue,
+			String CampaignsName, String description, String closeDate, String relatedToDrp, String sourceDrp,
+			String amount) throws Exception {
+
+		getOpportunityNameEdt().sendKeys(opportunityName);
+
+		/*
+		 * I have Taken staic Value ,If require dynami value can use data Provider.
+		 * Based on the related Dropdown value we are selecting this . This will switch
+		 * windows and move Organization window and select Created Org.
+		 */
+
+		handleDropDown(getRelatedToDrp(), relatedToDrp);// Organizations
+		if (relatedToDrp.contentEquals("Accounts")) {
+			getRelatedToDrpValueLookUpImg().click();
+			switchToWindow(driver, "Accounts");
+			OrgSearchEdt.sendKeys(commonValue);// common elements so used same button
+			OrgSearchBtn.click();// common elements so used same button
+			driver.findElement(By.xpath("//a[.='" + commonValue + "']")).click();
+			switchToWindow(driver, "Potentials");// opportunity page.
+		} else {
+			getRelatedToDrpValueLookUpImg().click();
+			switchToWindow(driver, "Contacts");
+			OrgSearchEdt.sendKeys(commonValue);// common elements so used same button
+			OrgSearchBtn.click();// common elements so used same button
+			// driver.findElement(By.xpath("//a[.='" + commonValue + "']")).click();
+			driver.findElement(By.xpath("//a[contains(., '" + commonValue + "')]")).click();
+			switchToWindow(driver, "Potentials");// opportunity page.
+		}
+		/*
+		 * getRelatedToDrpValueLookUpImg().click(); switchToWindow(driver, "Accounts");
+		 * OrgSearchEdt.sendKeys(ORGNAME);// common elements so used same button
+		 * OrgSearchBtn.click();// common elements so used same button
+		 * driver.findElement(By.xpath("//a[.='" + ORGNAME + "']")).click();
+		 * switchToWindow(driver, "Potentials");// opportunity page.
+		 * 
+		 * /* I have Taken staic Value ,If require dynami value can use data Provider.
+		 */
+		handleDropDown(getOpportunityTypeDrp(), "Existing Business");
+
+		/*
+		 * I have Taken staic Value ,If require dynami value can use data Provider.
+		 * 
+		 * Based on the related Dropdown value we are selecting this . This will switch
+		 * windows and move Campaingn window and select Created Org. Base on the Created
+		 * Camapign we passing this value.
+		 */
+		handleDropDown(getLeadSourceDrp(), sourceDrp);
+		getCampaignSourceLookUpImg().click();
+		switchToWindow(driver, "Campaigns");// campaigns
+		OrgSearchEdt.sendKeys(CampaignsName);// common elements so used same button
+		OrgSearchBtn.click(); // common elements so used same button
+		driver.findElement(By.xpath("//a[.='" + CampaignsName + "']")).click();
+		switchToWindow(driver, "Potentials");// opportunity page.
+
+		getAmount().sendKeys(amount);
 		getExpectedCloseDate().clear();
 		getExpectedCloseDate().sendKeys(closeDate);
 

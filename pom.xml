@@ -1,208 +1,209 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>Qspiders</groupId>
-    <artifactId>AutomationFramework.QCO-SOEAJD-E1</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Qspiders</groupId>
+	<artifactId>AutomationFramework.QCO-SOEAJD-E1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-    <properties>
-        <maven.compiler.source>3.9.4</maven.compiler.source>
-        <maven.compiler.target>3.9.4</maven.compiler.target>
-        <selenium.version>4.12.1</selenium.version>
-        <webdrivermanager.version>5.5.3</webdrivermanager.version>
-        <poi.version>5.2.3</poi.version>
-        <poi-ooxml.version>5.2.3</poi-ooxml.version>
-        <common-io.version>2.13.0</common-io.version>
-        <testng.version>7.8.0</testng.version>
-        <extentreports.version>5.1.0</extentreports.version>
-        <lombok.version>1.18.28</lombok.version>
-        <allure-testng.version>2.24.0</allure-testng.version>
-        <datafaker.verion>2.0.1</datafaker.verion>
-        <javafaker.version>1.0.2</javafaker.version>
-        <log4j.version>1.2.17</log4j.version>
-        <log4j-api.version>3.0.0-alpha1</log4j-api.version>
-        <log4j-core.version>3.0.0-alpha1</log4j-core.version>
-        <!--  Profile Related  Versions  -->
-        <maven-surefire-plugin.vesion>3.1.2</maven-surefire-plugin.vesion>
-        <aspectj.version>1.9.19</aspectj.version>
-        <!--   -->
-    </properties>
-    <dependencies>
-        <!--  This is selenium web driver  -->
-        <!--
+	<properties>
+		<maven.compiler.source>3.9.4</maven.compiler.source>
+		<maven.compiler.target>3.9.4</maven.compiler.target>
+		<selenium.version>4.12.1</selenium.version>
+		<webdrivermanager.version>5.5.3</webdrivermanager.version>
+		<poi.version>5.2.3</poi.version>
+		<poi-ooxml.version>5.2.3</poi-ooxml.version>
+		<common-io.version>2.13.0</common-io.version>
+		<testng.version>7.8.0</testng.version>
+		<extentreports.version>5.1.0</extentreports.version>
+		<lombok.version>1.18.28</lombok.version>
+		<allure-testng.version>2.24.0</allure-testng.version>
+		<datafaker.verion>2.0.1</datafaker.verion>
+		<javafaker.version>1.0.2</javafaker.version>
+		<log4j.version>1.2.17</log4j.version>
+		<log4j-api.version>3.0.0-alpha1</log4j-api.version>
+		<log4j-core.version>3.0.0-alpha1</log4j-core.version>
+		<!--  Profile Related  Versions  -->
+		<maven-surefire-plugin.vesion>3.1.2</maven-surefire-plugin.vesion>
+		<aspectj.version>1.9.19</aspectj.version>
+		<!--   -->
+	</properties>
+	<dependencies>
+		<!--  This is selenium web driver  -->
+		<!--
                 https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java  -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-        <!--  This tool manages the driver executables  -->
-        <!--
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+		<!--  This tool manages the driver executables  -->
+		<!--
                 https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager  -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-            <!--  5.3.2  -->
-        </dependency>
-        <!--  This tool manages the excel fiels  -->
-        <!--  https://mvnrepository.com/artifact/org.apache.poi/poi  -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>${poi.version}</version>
-        </dependency>
-        <!--  https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml  -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>${poi-ooxml.version}</version>
-        </dependency>
-        <!--   -->
-        <!--  https://mvnrepository.com/artifact/commons-io/commons-io  -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${common-io.version}</version>
-        </dependency>
-        <!--  This is TestNg Junit  -->
-        <!--  https://mvnrepository.com/artifact/org.testng/testng  -->
-        <!--  https://mvnrepository.com/artifact/org.testng/testng  -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!--  This file Related to Extend Report -->
-        <!--  https://mvnrepository.com/artifact/com.aventstack/extentreports  -->
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>${extentreports.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!--  Allure Reporting  -->
-        <!--  https://mvnrepository.com/artifact/io.qameta.allure/allure-testng  -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>${allure-testng.version}</version>
-        </dependency>
-        <!--  This method with generate fake names and other details.  -->
-        <!--  Data Faker -->
-        <!--  https://mvnrepository.com/artifact/net.datafaker/datafaker  -->
-        <dependency>
-            <groupId>net.datafaker</groupId>
-            <artifactId>datafaker</artifactId>
-            <version>${datafaker.verion}</version>
-        </dependency>
-        <!--  Java Faker  -->
-        <!--  https://mvnrepository.com/artifact/com.github.javafaker/javafaker  -->
-        <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>${javafaker.version}</version>
-        </dependency>
-        <!--  This method will create log by using Apache Log4j  -->
-        <!--  https://mvnrepository.com/artifact/log4j/log4j  -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j-api.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j-core.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>${webdrivermanager.version}</version>
+			<!--  5.3.2  -->
+		</dependency>
+		<!--  This tool manages the excel fiels  -->
+		<!--  https://mvnrepository.com/artifact/org.apache.poi/poi  -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<!--  https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml  -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi-ooxml.version}</version>
+		</dependency>
+		<!--   -->
+		<!--  https://mvnrepository.com/artifact/commons-io/commons-io  -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${common-io.version}</version>
+		</dependency>
+		<!--  This is TestNg Junit  -->
+		<!--  https://mvnrepository.com/artifact/org.testng/testng  -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!--  This file Related to Extend Report -->
+		<!--  https://mvnrepository.com/artifact/com.aventstack/extentreports  -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extentreports.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!--  Allure Reporting  -->
+		<!--  https://mvnrepository.com/artifact/io.qameta.allure/allure-testng  -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure-testng.version}</version>
+		</dependency>
+		<!--  This method with generate fake names and other details.  -->
+		<!--  Data Faker -->
+		<!--  https://mvnrepository.com/artifact/net.datafaker/datafaker  -->
+		<dependency>
+			<groupId>net.datafaker</groupId>
+			<artifactId>datafaker</artifactId>
+			<version>${datafaker.verion}</version>
+		</dependency>
+		<!--  Java Faker  -->
+		<!--  https://mvnrepository.com/artifact/com.github.javafaker/javafaker  -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>${javafaker.version}</version>
+		</dependency>
+		<!--  This method will create log by using Apache Log4j  -->
+		<!--  https://mvnrepository.com/artifact/log4j/log4j  -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j-core.version}</version>
+		</dependency>
 
 
-    </dependencies>
+	</dependencies>
 
-    <profiles>
+	<profiles>
 
-        <profile>
-            <id>Regression</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${maven-surefire-plugin.vesion}</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>testng_RegressionSuite.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+		<profile>
+			<id>Regression</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>${maven-surefire-plugin.vesion}</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>testng_RegressionSuite.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
-        <profile>
-            <id>Smoke</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${maven-surefire-plugin.vesion}</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>testng_SmokeSuite.xml</suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                        <dependencies>
-                            <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
-                            <dependency>
-                                <groupId>org.aspectj</groupId>
-                                <artifactId>aspectjrt</artifactId>
-                                <version>${aspectj.version}</version>
-                                <scope>runtime</scope>
-                            </dependency>
+		<profile>
+			<id>Smoke</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>${maven-surefire-plugin.vesion}</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>testng_SmokeSuite.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+						<dependencies>
+							<!--
+							https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+							<dependency>
+								<groupId>org.aspectj</groupId>
+								<artifactId>aspectjrt</artifactId>
+								<version>${aspectj.version}</version>
+								<scope>runtime</scope>
+							</dependency>
 
-                        </dependencies>
+						</dependencies>
 
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-
-        <profile>
-            <id>DistributedParallel</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${maven-surefire-plugin.vesion}</version>
-                        <configuration>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>
-                                    testng_DistributedParallelExecution.xml
-                                </suiteXmlFile>
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
 
-    </profiles>
+		<profile>
+			<id>DistributedParallel</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>${maven-surefire-plugin.vesion}</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>
+									testng_DistributedParalleExecution.xml
+								</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+
+	</profiles>
 
 
 </project>
