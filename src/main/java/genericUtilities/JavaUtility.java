@@ -58,7 +58,7 @@ public class JavaUtility {
 	public String getsimpleDateFormat() {
 		Date d = new Date();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		String date = simpleDateFormat.format(new Date());
+		String date = simpleDateFormat.format(d);
 		return date;
 	}
 

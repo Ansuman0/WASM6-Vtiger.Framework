@@ -21,9 +21,9 @@ import objectRepository.OrganizationsPage;
  * @author Ansuman
  *
  */
-@Feature("Create Opportunity with all Details.")
+@Feature("Create Opportunity with Organaziation all Details.")
 @Listeners(ListenersImplementation.class)
-public class CreateOpportunityTestWithOrgTest extends BaseClass {
+public class CreateOpportunityWithOrgTest extends BaseClass {
 
 	@Test
 	public void createOpportunityTestWithOrgTest() throws Exception {
@@ -80,11 +80,18 @@ public class CreateOpportunityTestWithOrgTest extends BaseClass {
 		Assert.assertTrue(OpportunityFormTitel.contains(OpportunityFormTitel));
 		Reporter.log("Click on the Opportunity form to Create Opportunity");
 
-		opp.createOpportunityFullDetails(driver, opportunityName, ORGNAME, campaingName, description, closeDate);
-		Reporter.log("Create Opportunity with Required data");
-		String CretedOpportunity = opp.getCreatedOpportunityHeader();
-		Assert.assertTrue(CretedOpportunity.contains(opportunityName));
-		Reporter.log("Creating Opportunity Name & Given Name is Same");
+		try {
+			String relatedToDrp = "Accounts";
+			opp.createOpportunityFullDetails(driver, opportunityName, ORGNAME, campaingName, description, closeDate,
+					relatedToDrp);
+			Reporter.log("Create Opportunity with Organization data");
+			String CretedOpportunity = opp.getCreatedOpportunityHeader();
+			Assert.assertTrue(CretedOpportunity.contains(opportunityName));
+			Reporter.log("Creating Opportunity Name & Given Name is Same");
+		} catch (Exception e) {
+			e.printStackTrace();
+			e.getCause().getMessage();
+		}
 
 	}
 

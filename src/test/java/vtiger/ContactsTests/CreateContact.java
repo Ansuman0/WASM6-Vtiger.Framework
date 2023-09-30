@@ -7,10 +7,8 @@ import org.testng.annotations.Test;
 
 import genericUtilities.BaseClass;
 import genericUtilities.ListenersImplementation;
-import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import objectRepository.ContactsInfoPage;
-import objectRepository.ContactsPage;
 import objectRepository.ContactsPage;
 import objectRepository.HomePage;
 
