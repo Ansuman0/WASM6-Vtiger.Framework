@@ -11,5 +11,6 @@ public interface IConstantsUtility {
 	String excelFilePath = ".\\src\\test\\resources\\TestData.xlsx"; 
 	
 	String logFilePath =".\\src\\test\\resources\\log4j_Config.properties";
+	String opportunityTestData =".\\src\\test\\resources\\OpportunityTestData.xlsx";
 
 }
