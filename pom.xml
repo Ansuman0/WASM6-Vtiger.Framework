@@ -7,8 +7,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<maven.compiler.source>3.9.4</maven.compiler.source>
-		<maven.compiler.target>3.9.4</maven.compiler.target>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
 		<selenium.version>4.12.1</selenium.version>
 		<webdrivermanager.version>5.5.3</webdrivermanager.version>
 		<poi.version>5.2.3</poi.version>
