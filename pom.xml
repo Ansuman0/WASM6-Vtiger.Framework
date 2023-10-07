@@ -133,7 +133,6 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-		
 
 
 	</dependencies>
@@ -144,6 +143,18 @@
 			<id>Regression</id>
 			<build>
 				<plugins>
+					<!-- Maven Compiler Plugin Configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.8.1</version> <!-- Use the version compatible
+						with your Java version -->
+						<configuration>
+							<source>21</source> <!-- Set the Java source version -->
+							<target>21</target> <!-- Set the Java target version -->
+						</configuration>
+					</plugin>
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-surefire-plugin</artifactId>
@@ -162,6 +173,18 @@
 			<id>Smoke</id>
 			<build>
 				<plugins>
+					<!-- Maven Compiler Plugin Configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.8.1</version> <!-- Use the version compatible
+						with your Java version -->
+						<configuration>
+							<source>21</source> <!-- Set the Java source version -->
+							<target>21</target> <!-- Set the Java target version -->
+						</configuration>
+					</plugin>
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-surefire-plugin</artifactId>
@@ -206,6 +229,19 @@
 							<skip>true</skip>
 						</configuration>
 					</plugin>
+
+					<!-- Maven Compiler Plugin Configuration -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.8.1</version> <!-- Use the version compatible
+						with your Java version -->
+						<configuration>
+							<source>21</source> <!-- Set the Java source version -->
+							<target>21</target> <!-- Set the Java target version -->
+						</configuration>
+					</plugin>
+
 				</plugins>
 			</build>
 		</profile>
