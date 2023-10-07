@@ -29,7 +29,7 @@ jobs:
     #   - https://gh.io/using-larger-runners
     # Consider using larger runners for possible analysis time improvements.
     runs-on: ${{ matrix.language == 'swift' && 'macos-latest' || 'ubuntu-latest' }}
-    timeout-minutes: ${{ matrix.language == 'swift' && 120 || 360 }}
+    timeout-minutes: ${{ matrix.language == '-x swift' && 120 || 360 }}
     permissions:
       actions: read
       contents: read
@@ -48,12 +48,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Java11
+      - name: Setup Java17
         uses: actions/setup-java@v1
         with:
-          java-version: '11' # The JDK version to make available on the path.
+          java-version: '17' # The JDK version to make available on the path.
           java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
           architecture: x64 # (x64 or x86) - defaults to x64
+          distribution: 'temurin'
+      - name: Run the Maven verify phase
+        run: mvn --batch-mode --update-snapshots verify
+
 
         # Generate SARIF file during analysis
       - name: Generate SARIF
@@ -105,7 +109,7 @@ jobs:
 # Run workflow each time code is pushed to your repository and on a schedule.
 # The scheduled workflow runs every Thursday at 15:45 UTC.
   build:
-    runs-on: ubuntu-latest
+    runs-on: Windows-latest
     permissions:
       # required for all workflows
       security-events: write

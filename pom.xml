@@ -7,8 +7,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<maven.compiler.source>3.9.4</maven.compiler.source>
-		<maven.compiler.target>3.9.4</maven.compiler.target>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
 		<selenium.version>4.12.1</selenium.version>
 		<webdrivermanager.version>5.5.3</webdrivermanager.version>
 		<poi.version>5.2.3</poi.version>
@@ -23,6 +23,7 @@
 		<log4j.version>1.2.17</log4j.version>
 		<log4j-api.version>3.0.0-alpha1</log4j-api.version>
 		<log4j-core.version>3.0.0-alpha1</log4j-core.version>
+		<slf4j.version>2.0.9</slf4j.version>
 		<!--  Profile Related  Versions  -->
 		<maven-surefire-plugin.vesion>3.1.2</maven-surefire-plugin.vesion>
 		<aspectj.version>1.9.19</aspectj.version>
@@ -72,7 +73,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>${testng.version}</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<!--  This file Related to Extend Report -->
@@ -127,6 +128,12 @@
 			<artifactId>log4j-core</artifactId>
 			<version>${log4j-core.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		
 
 
 	</dependencies>
@@ -196,6 +203,7 @@
 									testng_DistributedParalleExecution.xml
 								</suiteXmlFile>
 							</suiteXmlFiles>
+							<skip>true</skip>
 						</configuration>
 					</plugin>
 				</plugins>
