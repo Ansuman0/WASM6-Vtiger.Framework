@@ -54,6 +54,10 @@ jobs:
           java-version: '17' # The JDK version to make available on the path.
           java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
           architecture: x64 # (x64 or x86) - defaults to x64
+          distribution: 'temurin'
+      - name: Run the Maven verify phase
+        run: mvn --batch-mode --update-snapshots verify
+
 
         # Generate SARIF file during analysis
       - name: Generate SARIF
@@ -105,7 +109,7 @@ jobs:
 # Run workflow each time code is pushed to your repository and on a schedule.
 # The scheduled workflow runs every Thursday at 15:45 UTC.
   build:
-    runs-on: ubuntu-latest
+    runs-on: Windows-latest
     permissions:
       # required for all workflows
       security-events: write
