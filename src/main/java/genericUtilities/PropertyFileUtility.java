@@ -4,7 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.log4j.LogManager;
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.poi.poifs.filesystem.Entry;
 
 /**
  * This class consists of generic methods related to property file
@@ -29,11 +31,18 @@ public class PropertyFileUtility {
 		return value;
 	}
 
-	public void readLogoDataFromPropertyFile() throws IOException {
+	public String readLogoDataFromPropertyFile(String key) throws IOException {
 		FileInputStream fis = new FileInputStream(IConstantsUtility.logFilePath);
+		
 		Properties pObj = new Properties();
 		pObj.load(fis);
 		PropertyConfigurator.configure(pObj);
+		LogManager.resetConfiguration();
+		PropertyConfigurator.configure(pObj);
+		String value = pObj.getProperty(key);
+		return value ;
 	}
+
+	
 
 }
